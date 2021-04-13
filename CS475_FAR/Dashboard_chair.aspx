@@ -14,7 +14,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  list-style: none;
   text-decoration: none;
   font-family: 'Josefin Sans', sans-serif;
 }
@@ -38,7 +37,6 @@ body{
 
 .wrapper .sidebar h2{
   color: #fff;
-  text-transform: uppercase;
   text-align: center;
   margin-bottom: 30px;
 }
