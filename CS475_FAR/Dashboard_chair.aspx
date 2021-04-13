@@ -30,7 +30,7 @@ body{
 .wrapper .sidebar{
   width: 200px;
   height: 100%;
-  background: #4b4276;
+  background: #555555;
   padding: 30px 0px;
   position: fixed;
 }
