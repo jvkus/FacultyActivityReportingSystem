@@ -25,12 +25,10 @@ body {
   width: 360px;
   background: white;
   border-radius: 7px;
-  -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .login:before {
-  content: '';
   position: absolute;
   top: -8px;
   right: -8px;
@@ -52,74 +50,30 @@ body {
   background: #f3f3f3;
   border-bottom: 1px solid #cfcfcf;
   border-radius: 3px 3px 0 0;
-  background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
+/*  background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
   background-image: -moz-linear-gradient(top, whiteffd, #eef2f5);
   background-image: -o-linear-gradient(top, whiteffd, #eef2f5);
   background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
   -webkit-box-shadow: 0 1px whitesmoke;
-  box-shadow: 0 1px whitesmoke;
+  box-shadow: 0 1px whitesmoke;*/
 }
 
 .login p {
   margin: 50px 0 0;
 }
 
-/*.login p:first-child {
-  margin-top: 0;
-}*/
+
 
 .login input[type=text], .login input[type=password] {
   width: 200px;
 }
 
-/*.login p.remember_me {
-  float: left;
-  line-height: 31px;
-}*/
-/*
-.login p.remember_me label {
-  font-size: 12px;
-  color: #777;
-  cursor: pointer;
-}*/
 
-/*.login p.remember_me input {
-  position: relative;
-  bottom: 1px;
-  margin-right: 4px;
-  vertical-align: middle;
-}*/
 
 .login p.submit {
   text-align: right;
 }
 
-/*.login-help {
-  margin: 20px 0;
-  font-size: 11px;
-  color: white;
-  text-align: center;
-  text-shadow: 0 1px #2a85a1;
-}
-
-.login-help a {
-  color: #cce7fa;
-  text-decoration: none;
-}
-
-.login-help a:hover {
-  text-decoration: underline;
-}*/
-
-/*:-moz-placeholder {
-  color: #c9c9c9 !important;
-  font-size: 13px;
-}*/
-
-/*::-webkit-input-placeholder {
-  color: #ccc;
-  font-size: 13px;
-}*/
 
 input {
   font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
@@ -143,20 +97,15 @@ input[type=text], input[type=password] {
   border-color: #c4c4c4 #d1d1d1 #d4d4d4;
   border-radius: 2px;
   outline: 5px solid #eff4f7;
-  -moz-outline-radius: 3px;
+ /* -moz-outline-radius: 3px;
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);*/
 }
 
 #DropDownList1 {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-/*input[type=text]:focus, input[type=password]:focus {
-  border-color: #7dc9e2;
-  outline-color: #dceefc;
-  outline-offset: 0;
-}*/
 
 input[type=submit] {
   padding: 0 18px;
@@ -172,7 +121,7 @@ input[type=submit] {
   border-color: #b4ccce #b3c0c8 #9eb9c2;
   border-radius: 16px;
   outline: 0;
-  -webkit-box-sizing: content-box;
+  /*-webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   background-image: -webkit-linear-gradient(top, #edf5f8, #cde5ef);
@@ -180,7 +129,7 @@ input[type=submit] {
   background-image: -o-linear-gradient(top, #edf5f8, #cde5ef);
   background-image: linear-gradient(to bottom, #edf5f8, #cde5ef);
   -webkit-box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);*/
 }
 
 input[type=submit]:active {
@@ -190,9 +139,6 @@ input[type=submit]:active {
   box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
-/*.lt-ie9 input[type=text], .lt-ie9 input[type=password] {
-  line-height: 34px;
-}*/
 
 
    
@@ -248,8 +194,8 @@ input[type=submit]:active {
     <div>
     
     </div>
-       
+        </form>
         </div>
-    </form>
+   
 </body>
 </html>

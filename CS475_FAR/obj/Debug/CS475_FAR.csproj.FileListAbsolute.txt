@@ -215,7 +215,6 @@ C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bi
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Antlr3.Runtime.pdb
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\obj\Debug\CS475_FAR.csprojAssemblyReference.cache
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\obj\Debug\CS475_FAR.csproj.CoreCompileInputs.cache
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\obj\Debug\CS475_FAR.csproj.CopyComplete
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\obj\Debug\CS475_FAR.dll
