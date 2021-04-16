@@ -37,25 +37,37 @@ namespace CS475_FAR
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ConnectionString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from Login where userName =@userName and Password=@Password", con);
+            SqlCommand cmd = new SqlCommand("select * from Login where userName =@userName and Password=@Password and userType=@userType",  con);
             cmd.Parameters.AddWithValue("@userName", TextBox1.Text);
             cmd.Parameters.AddWithValue("@Password", TextBox2.Text);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            cmd.Parameters.AddWithValue("@userType", DropDownList1.SelectedValue);
+
+
+            //////if (dt.Rows.Count > 0)
+            //////{
+            //////    Session["New"] = UserName.Text;
+            //////    Response.Redirect("Teacher.aspx");
+            //////}
+            //////else
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            
-            if (dt.Rows.Count > 0)
+           // Session["sessionUser"] = TextBox1.Text;
+
+            if (dt.Rows.Count == 1)
             {
-
+                 //Session["New"] = TextBox1.Text;
                 if (DropDownList1.SelectedValue == "admin")
-
-                    Response.Redirect("Dashboard_admin.aspx");
-                if (DropDownList1.SelectedValue == "dean")
-                    Response.Redirect("Dashboard_dean.aspx");
-                if (DropDownList1.SelectedValue == "chair")
+                   
+                Response.Redirect("Dashboard_admin.aspx");
+                else if (DropDownList1.SelectedValue == "dean")
+                   
+                Response.Redirect("Dashboard_dean.aspx");
+            else    if (DropDownList1.SelectedValue == "chair")
                     Response.Redirect("Dashboard_chair.aspx");
-                if (DropDownList1.SelectedValue == "faculty")
+                else if (DropDownList1.SelectedValue == "faculty")
                     Response.Redirect("Dashboard_faculty.aspx");
 
             }
