@@ -46,7 +46,7 @@ namespace CS475_FAR
             //////if (dt.Rows.Count > 0)
             //////{
             //////    Session["New"] = UserName.Text;
-            //////    Response.Redirect("Teacher.aspx");
+        
             //////}
             //////else
 
