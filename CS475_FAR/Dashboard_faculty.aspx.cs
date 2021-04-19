@@ -22,7 +22,7 @@ namespace CS475_FAR
 
         protected void linkContact_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx");
+            Response.Redirect("About.aspx");
         }
 
         protected void linkTeaching_Click(object sender, EventArgs e)

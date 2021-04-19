@@ -219,4 +219,3 @@ C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\ob
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\obj\Debug\CS475_FAR.csproj.CopyComplete
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\obj\Debug\CS475_FAR.dll
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\obj\Debug\CS475_FAR.pdb
-C:\Users\e0652386\Source\Repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\obj\Debug\CS475_FAR.csprojAssemblyReference.cache
