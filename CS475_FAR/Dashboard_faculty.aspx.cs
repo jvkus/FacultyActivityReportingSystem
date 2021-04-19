@@ -34,5 +34,11 @@ namespace CS475_FAR
         {
 
         }
+
+        protected void linkCreateReport_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Create_Report.aspx");
+
+        }
     }
 }

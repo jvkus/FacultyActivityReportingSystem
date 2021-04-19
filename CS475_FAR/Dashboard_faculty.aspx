@@ -170,10 +170,14 @@ h1{
                
 
          </div>
-                <div class="header">Narrative</div>
                 <div class="header">Teaching</div>
                 <div class="header">Reports</div>
 
+         <div class="header" style="height: 138px">
+             <h3 class="auto-style1">Reports</h3>
+             <asp:LinkButton class="linkCreateReport" runat="server" OnClick="linkCreateReport_Click" text="Create a new report"/>
+             <br/> </div>
+                       
             
         </div>
        

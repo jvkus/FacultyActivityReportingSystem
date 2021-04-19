@@ -33,5 +33,15 @@ namespace CS475_FAR
         {
 
         }
+
+        protected void TextBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
