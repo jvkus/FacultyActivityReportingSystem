@@ -37,10 +37,20 @@ namespace CS475_FAR
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ConnectionString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from Login where userName =@userName and Password=@Password", con);
+            SqlCommand cmd = new SqlCommand("select * from Login where userName =@userName and Password=@Password and userType=@userType",  con);
             cmd.Parameters.AddWithValue("@userName", TextBox1.Text);
             cmd.Parameters.AddWithValue("@Password", TextBox2.Text);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            cmd.Parameters.AddWithValue("@userType", DropDownList1.SelectedValue);
+
+
+            //////if (dt.Rows.Count > 0)
+            //////{
+            //////    Session["New"] = UserName.Text;
+        
+            //////}
+            //////else
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
 
