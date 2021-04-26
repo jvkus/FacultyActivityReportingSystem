@@ -123,6 +123,10 @@ h1{
              margin-top: 18px;
          }
 
+         .auto-style2 {
+             margin-top: 0;
+         }
+
      </style>
     <form id="form2" runat="server">
         <div>
@@ -152,25 +156,26 @@ h1{
     <div class="main_content">
         <%-- make this a collapsible panel --%>
 
+        <div class="header"><h3>Schedule<asp:SqlDataSource ID="scheduleJohn" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT [courseID], [courseName], [startTime], [endTime] FROM [johnsmithSchedule]"></asp:SqlDataSource>
+            </h3>
+            <div>
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="auto-style2" DataSourceID="scheduleJohn" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                    <Columns>
+                        <asp:BoundField DataField="courseID" HeaderText="courseID" SortExpression="courseID" />
+                        <asp:BoundField DataField="courseName" HeaderText="courseName" SortExpression="courseName" />
+                        <asp:BoundField DataField="startTime" HeaderText="startTime" SortExpression="startTime" />
+                        <asp:BoundField DataField="endTime" HeaderText="endTime" SortExpression="endTime" />
+                    </Columns>
+                </asp:GridView>
+            </div>
+        </div>
         <div class="header">
             <h3>General Information  </h3>
            <asp:LinkButton ID="linkContact"  runat="server" OnClick="linkContact_Click" Text="Contact & Personal information"/>
 
         
        </div>
-         <div class="header" style="height: 138px">
-             <h3 class="auto-style1">Teaching</h3>
-            <div class="contact" style="margin-bottom:20px">
-
-           <asp:LinkButton class="linkSchedule" runat="server" OnClick="linkTeaching_Click" text="Schedule"/>
-             <br/> </div>
-                        <asp:LinkButton ID="LinkButton2" runat="server" OnClick="linkAdvising_Click" Text="Advising"/>
-               
-
-         </div>
-                <div class="header">Narrative</div>
-                <div class="header">Teaching</div>
-                <div class="header">Reports</div>
+                
         
          <div class="header" style="height: 138px">
              <h3 class="auto-style1">Reports</h3>

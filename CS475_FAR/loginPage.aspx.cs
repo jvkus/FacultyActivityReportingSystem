@@ -44,27 +44,39 @@ namespace CS475_FAR
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            
+
             if (dt.Rows.Count > 0)
             {
+                string userType = Convert.ToString(cmd.ExecuteScalar());
 
-                if (DropDownList1.SelectedValue == "admin")
+                
+                    if (DropDownList1.SelectedItem.Value == "admin" && userType == "admin")
 
-                    Response.Redirect("Dashboard_admin.aspx");
-                if (DropDownList1.SelectedValue == "dean")
-                    Response.Redirect("Dashboard_dean.aspx");
-                if (DropDownList1.SelectedValue == "chair")
-                    Response.Redirect("Dashboard_chair.aspx");
-                if (DropDownList1.SelectedValue == "faculty")
-                    Response.Redirect("Dashboard_faculty.aspx");
+                        Response.Redirect("Dashboard_admin.aspx");
+                    else if (DropDownList1.SelectedItem.Value == "dean" && userType == "dean")
+                        Response.Redirect("Dashboard_dean.aspx");
+                    else if (DropDownList1.SelectedItem.Value == "chair" && userType == "chair")
+                        Response.Redirect("Dashboard_chair.aspx");
+                    else if (DropDownList1.SelectedItem.Value == "faculty" && userType == "faculty")
+                        Response.Redirect("Dashboard_faculty.aspx");
 
+
+                    else
+                    {
+                        Label3.Visible = true;
+                        Label3.Text = "Wrong Password";
+                    }
             }
-            else
-            {
-                Label3.Visible = true;
-                Label3.Text = "Wrong Password";
-            }
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
+
+        protected void DropDownList1_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
         }
+    }
     }

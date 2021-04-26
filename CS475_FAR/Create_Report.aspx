@@ -235,7 +235,7 @@ h1{
     <div class="sidebar">
 
         <%-- change some of the icons --%>
-        <h2>Sidebar</h2>
+        <h2>FARS</h2>
         <ul>
             <li><a href="dashboard_faculty.aspx"><i class="fas fa-home"></i>Home</a></li>
             <li><a href="profile.aspx"><i class="fas fa-user"></i>Profile</a></li>
@@ -266,7 +266,7 @@ h1{
                         <asp:Label ID="lblFirstName" runat="server" Text="First Name:"></asp:Label>
                     </td>
                     <td class="auto-style10">
-                        <asp:TextBox ID="txtFirstName" runat="server" CssClass="auto-style16"></asp:TextBox>
+                        <asp:TextBox ID="txtFirstName" runat="server" CssClass="auto-style16" OnTextChanged="txtFirstName_TextChanged"></asp:TextBox>
                     </td>
                     <td class="auto-style17">
                         &nbsp;
@@ -279,7 +279,7 @@ h1{
                         <asp:Label ID="lblLastName" runat="server" Text="Last Name:"></asp:Label>
                     </td>
                     <td class="auto-style14">
-                        <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtLastName" runat="server" OnTextChanged="txtLastName_TextChanged"></asp:TextBox>
                     </td>
                     <td class="auto-style18">
                         &nbsp;</td>
@@ -291,7 +291,7 @@ h1{
                         <asp:Label ID="lblDept" runat="server" Text="Department Name: "></asp:Label>
                     </td>
                     <td class="auto-style12">
-                        <asp:TextBox ID="txtDeptName" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtDeptName" runat="server" OnTextChanged="txtDeptName_TextChanged"></asp:TextBox>
                     </td>
                     <td class="auto-style19">
                         &nbsp;</td>
@@ -326,7 +326,7 @@ h1{
                         <asp:Label ID="lblTeachingQ" runat="server">A) For your reference and context, you may list courses taught and enrollment in those courses, and number of advisees (since the Dean/VPAA is able to obtain much of this information electronically, providing specific information is optional). You may wish to focus on work with individual students, such as independent studies, collaborative research, field work, internships, etc.</asp:Label>
                     </td>
                 <td>
-                    <asp:TextBox ID="txtTeaching" runat="server" Height="117px" Width="413px" TextMode="MultiLine" CssClass="auto-style23" ></asp:TextBox>
+                    <asp:TextBox ID="txtTeaching" runat="server" Height="117px" Width="413px" TextMode="MultiLine" CssClass="auto-style23" OnTextChanged="txtTeaching_TextChanged" ></asp:TextBox>
 
 
                     
@@ -342,7 +342,7 @@ h1{
                         <asp:Label ID="lblTeachingReflectQ" runat="server">B) Please reflect on your teaching accomplishments during the past academic year. Describe current and future goals for teaching (new/revised courses, new pedagogies you have used/plan to explore).</asp:Label>
                     </td>
                 <td>
-                    <asp:TextBox ID="txtReflect" runat="server" Height="117px" Width="413px" TextMode="MultiLine" CssClass="auto-style23" ></asp:TextBox>
+                    <asp:TextBox ID="txtReflect" runat="server" Height="117px" Width="413px" TextMode="MultiLine" CssClass="auto-style23" OnTextChanged="txtReflect_TextChanged" ></asp:TextBox>
 
 
                     
@@ -364,7 +364,7 @@ h1{
                         <asp:Label ID="lblServiceQ" runat="server">A) Please identify and list your service during the past academic year. Be sure to distinguish between departmental, college-wide, and service to the community/profession.</asp:Label>
                     </td>
                 <td>
-                    <asp:TextBox ID="txtService" runat="server" Height="117px" Width="413px" TextMode="MultiLine" CssClass="auto-style23"></asp:TextBox>
+                    <asp:TextBox ID="txtService" runat="server" Height="117px" Width="413px" TextMode="MultiLine" CssClass="auto-style23" OnTextChanged="txtService_TextChanged"></asp:TextBox>
 
 
                     
@@ -380,7 +380,7 @@ h1{
                         <asp:Label ID="lblServiceReflectQ" runat="server">B) Please reflect on your service accomplishments during the past academic year. Describe current and future goals for service.</asp:Label>
                     </td>
                 <td>
-                    <asp:TextBox ID="txtServiceReflect" runat="server" Height="117px" Width="413px" TextMode="MultiLine" CssClass="auto-style23"></asp:TextBox>
+                    <asp:TextBox ID="txtServiceReflect" runat="server" Height="117px" Width="413px" TextMode="MultiLine" CssClass="auto-style23" OnTextChanged="txtServiceReflect_TextChanged"></asp:TextBox>
 
 
                     
@@ -407,7 +407,7 @@ h1{
                         <asp:Label ID="lblScholarlyQ" runat="server">A) Recognizing that scholarship is defined differently and broadly across and among disciplines and fields, please list your grants, publications, and/or significant creative/scholarly activities during the past academic year. If relevant, indicate whether your scholarship was peer-reviewed. Include full citation information, with links to online sources, when possible. Please be sure to include co-authors, if applicable.</asp:Label>
                     </td>
                 <td>
-                    <asp:TextBox ID="txtScholarly" runat="server" Height="117px" Width="413px" TextMode="MultiLine" CssClass="auto-style23"></asp:TextBox>
+                    <asp:TextBox ID="txtScholarly" runat="server" Height="117px" Width="413px" TextMode="MultiLine" CssClass="auto-style23" OnTextChanged="txtScholarly_TextChanged"></asp:TextBox>
 
 
                     
@@ -429,7 +429,7 @@ h1{
                         <asp:Label ID="lblScholarlyReflectQ" runat="server">B) Please reflect on your accomplishments related to scholarly and creative activity during the past academic year. Describe current and future goals for scholarly and creative activity, including works in progress, revised/continued or new projects, upcoming submissions or presentations/exhibits/shows, etc.</asp:Label>
                     </td>
                 <td>
-                    <asp:TextBox ID="txtScholarlyReflect" runat="server" Height="117px" Width="413px" TextMode="MultiLine" CssClass="auto-style23"></asp:TextBox>
+                    <asp:TextBox ID="txtScholarlyReflect" runat="server" Height="117px" Width="413px" TextMode="MultiLine" CssClass="auto-style23" OnTextChanged="txtScholarlyReflect_TextChanged"></asp:TextBox>
 
 
                     
@@ -458,7 +458,7 @@ h1{
                         <asp:Label ID="lblNarrativeQ" runat="server">Please share your thoughts about College initiatives and your thoughts about the direction and future of the college, as well as your concerns and needs. Please include any additional comments you&#39;d like to share with your Chair and Dean/VPAA in this section.</asp:Label>
                     </td>
                 <td>
-                    <asp:TextBox ID="txtNarrative" runat="server" Height="117px" Width="413px" TextMode="MultiLine" CssClass="auto-style23"></asp:TextBox>
+                    <asp:TextBox ID="txtNarrative" runat="server" Height="117px" Width="413px" TextMode="MultiLine" CssClass="auto-style23" OnTextChanged="txtNarrative_TextChanged"></asp:TextBox>
 
 
                     
