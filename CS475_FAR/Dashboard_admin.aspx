@@ -11,6 +11,7 @@
         <div>
             <h1>Dashboard</h1>
         </div>
+        <asp:LoginName ID="LoginName1" runat="server" />
     </form>
 </body>
 </html>

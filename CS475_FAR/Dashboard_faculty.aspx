@@ -118,6 +118,10 @@ h1{
     
     
 }
+.wrapper .main_content GridView1{
+
+
+}
 
          .auto-style1 {
              margin-top: 18px;
@@ -130,7 +134,9 @@ h1{
      </style>
     <form id="form2" runat="server">
         <div>
-            <h1>Faculty Dashboard </h1>
+            <h1>Welcome,&nbsp;
+                <asp:Label ID="Label1" runat="server"></asp:Label>
+            </h1>
         </div>
 
 <%--        this tag is to display icons in the sidebar--%>
@@ -156,16 +162,30 @@ h1{
     <div class="main_content">
         <%-- make this a collapsible panel --%>
 
-        <div class="header"><h3>Schedule<asp:SqlDataSource ID="scheduleJohn" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT [courseID], [courseName], [startTime], [endTime] FROM [johnsmithSchedule]"></asp:SqlDataSource>
+        <div class="header"><h3>Schedule<asp:SqlDataSource ID="scheduleJohn" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT [courseID], [courseName], [startTime], [endTime] FROM [johnsmithSchedule]">
+  
+            
+                                        </asp:SqlDataSource>
             </h3>
             <div>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="auto-style2" DataSourceID="scheduleJohn" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="auto-style2" DataSourceID="scheduleJohn" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None" Height="231px" Width="594px">
+                    <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField DataField="courseID" HeaderText="courseID" SortExpression="courseID" />
-                        <asp:BoundField DataField="courseName" HeaderText="courseName" SortExpression="courseName" />
-                        <asp:BoundField DataField="startTime" HeaderText="startTime" SortExpression="startTime" />
-                        <asp:BoundField DataField="endTime" HeaderText="endTime" SortExpression="endTime" />
+                        <asp:BoundField DataField="courseID" HeaderText="courseID" SortExpression="courseID" ItemStyle-Width="100" />
+                        <asp:BoundField DataField="courseName" HeaderText="courseName" SortExpression="courseName" ItemStyle-Width="100" />
+                        <asp:BoundField DataField="startTime" HeaderText="startTime" SortExpression="startTime" ItemStyle-Width="100" />
+                        <asp:BoundField DataField="endTime" HeaderText="endTime" SortExpression="endTime" ItemStyle-Width="100" />
                     </Columns>
+                    <EditRowStyle BackColor="#2461BF" />
+                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EFF3FB" />
+                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
             </div>
         </div>

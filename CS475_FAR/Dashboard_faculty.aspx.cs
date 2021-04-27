@@ -18,91 +18,84 @@ namespace CS475_FAR
         {
             int userId = 0;
             string roles = string.Empty;
-           
-           
 
 
 
-                   SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ConnectionString) ;
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("select * from Login where userName =@userName and Password=@Password", con);
-                 
-                    cmd.Connection = con;
-                    con.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    reader.Read();
-                    userId = Convert.ToInt32(reader["userType"]);
-                    roles = reader["userRole"].ToString();
-                    con.Close();
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from Login where userName =@userName and Password=@Password", con);
+
+            cmd.Connection = con;
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            userId = Convert.ToInt32(reader["userType"]);
+            roles = reader["userRole"].ToString();
+            con.Close();
+
+
+
+
+
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+            if (Session["user"] != null)
+            {
+
+                Label1.Text = Session["user"].ToString();
+
+            }
+
+            if (Session["samjam"] != null)
+            {
+                GridView1.Visible = false;
+
+                if(Session["tomjef"] != null)
+                {
+                    GridView1.Visible = true; 
                 }
-                protected void Page_Load(object sender, EventArgs e)
-        {
-           
 
 
 
 
 
-                GridView1.Columns[3].Visible = this.Page.User.IsInRole("johsmi");
+            }
 
-                
-            
-        }
 
-        protected void MultiView1_ActiveViewChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        protected void linkContact_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Default.aspx");
-        }
 
-        protected void linkTeaching_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        protected void linkAdvising_Click(object sender, EventArgs e)
-        {
+
+
+            //protected void linkContact_Click(object sender, EventArgs e)
+            //{
+            //    Response.Redirect("About.aspx");
+            //}
+
+
+
+
 
         }
 
         protected void linkCreateReport_Click(object sender, EventArgs e)
         {
             Response.Redirect("Create_Report.aspx");
+
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-
-        }
-
-        protected void MultiView1_ActiveViewChanged(object sender, EventArgs e)
-        {
 
         }
 
         protected void linkContact_Click(object sender, EventArgs e)
         {
-            Response.Redirect("About.aspx");
-        }
-
-        protected void linkTeaching_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void linkAdvising_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void linkCreateReport_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Create_Report.aspx");
 
         }
     }

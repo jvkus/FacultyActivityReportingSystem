@@ -15,12 +15,15 @@ namespace CS475_FAR
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           if(Session["userSam"] == null)
+            {
+                GridView1.Visible = false;
+            }
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)

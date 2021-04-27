@@ -240,7 +240,7 @@ h1{
             <li><a href="dashboard_faculty.aspx"><i class="fas fa-home"></i>Home</a></li>
             <li><a href="profile.aspx"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
-            <li><a href="#"><i class="fas fa-folder"></i>Reports</a></li>
+            <li><a href="reports.aspx"><i class="fas fa-folder"></i>Reports</a></li>
               </ul> 
         
     </div> 
@@ -487,6 +487,7 @@ h1{
                 <td><div class="btnSubmit">
                     
                         <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" /></div>
+                    <asp:Button ID="btnClear" runat="server" Height="28px" Text="Clear" Width="68px" />
                 </td>
             </tr>
             

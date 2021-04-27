@@ -125,11 +125,21 @@ h1{
         
     </div>
     <div class="main_content">
-        <div class="header">General Information</div>
+        <div class="header">General Information<br />
+            <br />
+            <br />
+            <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="facultyID" DataSourceID="SqlDataSource1" Height="127px" OnPageIndexChanging="DetailsView1_PageIndexChanging" Width="550px">
+                <Fields>
+                    <asp:BoundField DataField="facultyID" HeaderText="facultyID" ReadOnly="True" SortExpression="facultyID" />
+                    <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
+                    <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
+                    <asp:BoundField DataField="deanID" HeaderText="deanID" SortExpression="deanID" />
+                    <asp:BoundField DataField="chairID" HeaderText="chairID" SortExpression="chairID" />
+                </Fields>
+            </asp:DetailsView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT [facultyID], [firstName], [lastName], [deanID], [chairID] FROM [faculty]"></asp:SqlDataSource>
+        </div>
        
-         <div class="header">Services</div>
-                <div class="header">Narrative</div>
-                <div class="header">Teaching</div>
                 <div class="header">Reports</div>
 
             

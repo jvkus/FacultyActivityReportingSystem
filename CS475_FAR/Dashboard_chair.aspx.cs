@@ -23,5 +23,10 @@ namespace CS475_FAR
         {
 
         }
+
+        protected void DetailsView1_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+        {
+
+        }
     }
 }

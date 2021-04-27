@@ -35,6 +35,10 @@ namespace CS475_FAR
         {
 
 
+            string userSam = TextBox1.Text.Trim();
+            string userTom = TextBox1.Text.Trim();
+            string user = TextBox1.Text.Trim();
+
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ConnectionString);
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from Login where userName =@userName and Password=@Password and userType=@userType",  con);
@@ -58,6 +62,9 @@ namespace CS475_FAR
             if (dt.Rows.Count > 0)
             {
                 string userType = Convert.ToString(cmd.ExecuteScalar());
+                            Session["user"] = user;
+                Session["samjam"] = userSam;
+                Session["tomjef"] = userTom; 
 
                 
                     if (DropDownList1.SelectedItem.Value == "admin" && userType == "admin")
