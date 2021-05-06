@@ -172,7 +172,7 @@ input[type=submit]:active {
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="loginDs" DataTextField="userType" DataValueField="userType" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged1">
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="loginDs" DataTextField="userType" DataValueField="userType" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged1">
                                     <asp:ListItem Text="Usertype" Value="1"></asp:ListItem>
 
                     </asp:DropDownList>
