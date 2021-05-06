@@ -172,10 +172,20 @@ input[type=submit]:active {
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="loginDs" DataTextField="userType" DataValueField="userType" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged1">
                                     <asp:ListItem Text="Usertype" Value="1"></asp:ListItem>
 
                     </asp:DropDownList>
+                    <asp:SqlDataSource ID="loginDs" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT [userType] FROM [userRole]">
+
+
+                                  <SelectParameters>
+
+                <asp:SessionParameter Name="userName" SessionField="mySessionVariable" Type="String" />
+
+
+                    </SelectParameters>
+                    </asp:SqlDataSource>
                 </td>
                 <td>
                     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Login" />

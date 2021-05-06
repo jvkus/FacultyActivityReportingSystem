@@ -13,10 +13,10 @@
 
             <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" AutoGenerateEditButton="True" DataKeyNames="reportDate" DataSourceID="dtReport" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None" Height="396px" Width="16px">
                 <AlternatingRowStyle BackColor="White" />
-                <Columns>
+            <Columns>
                     <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
                     <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
-                    <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
+                <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
                     <asp:BoundField DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
                     <asp:BoundField DataField="teachingA" HeaderText="teachingA" SortExpression="teachingA" />
                     <asp:BoundField DataField="teachingB" HeaderText="teachingB" SortExpression="teachingB" />
@@ -25,7 +25,7 @@
                     <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
                     <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
                     <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
-                </Columns>
+            </Columns>
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

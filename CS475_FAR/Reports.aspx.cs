@@ -60,7 +60,7 @@ namespace CS475_FAR
 
 
 
-        }
+            }
 
         private void GridView1_RowDataBound(Object sender, GridViewRowEventArgs e)
         {
@@ -69,18 +69,18 @@ namespace CS475_FAR
 
         protected void dtReport_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
-
+           
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
 
               
 
-            }
-
         }
+
+    }
 
 
       
