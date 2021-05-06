@@ -14,12 +14,12 @@ namespace CS475_FAR
 {
     public partial class loginPage : System.Web.UI.Page
     {
-        
-       
+
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+
             //DropDownList1.Items.Add(new ListItem("UserType"));
             DropDownList1.Items.Add("admin");
 
@@ -35,36 +35,66 @@ namespace CS475_FAR
         {
 
 
+            string userSam = TextBox1.Text.Trim();
+            string userTom = TextBox1.Text.Trim();
+            string user = TextBox1.Text.Trim();
+            string userMelsmi = TextBox1.Text.Trim();
+
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ConnectionString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from Login where userName =@userName and Password=@Password", con);
+            SqlCommand cmd = new SqlCommand("select * from Login where userName =@userName and Password=@Password and userType=@userType", con);
             cmd.Parameters.AddWithValue("@userName", TextBox1.Text);
             cmd.Parameters.AddWithValue("@Password", TextBox2.Text);
+            cmd.Parameters.AddWithValue("@userType", DropDownList1.SelectedValue);
+
+
+            //////if (dt.Rows.Count > 0)
+            //////{
+            //////    Session["New"] = UserName.Text;
+
+            //////}
+            //////else
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            
+
             if (dt.Rows.Count > 0)
             {
+                string userType = Convert.ToString(cmd.ExecuteScalar());
+                Session["user"] = user;
+                Session["samjam"] = userSam;
+                Session["tomjef"] = userTom;
+                Session["melsmi"] = userMelsmi;
 
-                if (DropDownList1.SelectedValue == "admin")
+                if (DropDownList1.SelectedItem.Value == "admin" && userType == "admin")
 
                     Response.Redirect("Dashboard_admin.aspx");
-                if (DropDownList1.SelectedValue == "dean")
+                else if (DropDownList1.SelectedItem.Value == "dean" && userType == "dean")
                     Response.Redirect("Dashboard_dean.aspx");
-                if (DropDownList1.SelectedValue == "chair")
+                else if (DropDownList1.SelectedItem.Value == "chair" && userType == "chair")
                     Response.Redirect("Dashboard_chair.aspx");
-                if (DropDownList1.SelectedValue == "faculty")
+                else if (DropDownList1.SelectedItem.Value == "faculty" && userType == "faculty")
                     Response.Redirect("Dashboard_faculty.aspx");
 
+
+                else
+                {
+                    Label3.Visible = true;
+                    Label3.Text = "Wrong Password";
+                }
             }
-            else
-            {
-                Label3.Visible = true;
-                Label3.Text = "Wrong Password";
-            }
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
+
+        protected void DropDownList1_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
         }
     }
+}

@@ -11,7 +11,7 @@ namespace CS475_FAR
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+          
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
@@ -21,6 +21,17 @@ namespace CS475_FAR
 
         protected void Menu1_MenuItemClick1(object sender, MenuEventArgs e)
         {
+
+        }
+
+        protected void DetailsView1_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+        {
+
+        }
+
+        protected void linkReports_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Reports.aspx");
 
         }
     }
