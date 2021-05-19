@@ -101,7 +101,14 @@ h1{
 }</style>
     <form id="form1" runat="server">
         <div>
-            <h1>Chair Dashboard </h1>
+            <h1>
+                <img alt="" src="Elmhurst_University_logo.png" height = "100"/></h1>
+            <h1>Welcome Back Chair
+                <asp:Label ID="Label1" runat="server"></asp:Label>
+            </h1>
+            <div>
+                </div>
+            <hr />
         </div>
 
 <%--        this tag is to display icons in the sidebar--%>
@@ -111,7 +118,7 @@ h1{
     <div class="sidebar">
 
         <%-- change some of the icons --%>
-        <h2>Sidebar</h2>
+        <h2>FARS</h2>
         <ul>
             <li><a href="dashboard_chair.aspx"><i class="fas fa-home"></i>Home</a></li>
             <li><a href="profile.aspx"><i class="fas fa-user"></i>Profile</a></li>
@@ -128,7 +135,11 @@ h1{
         <div class="header">General Information<br />
             <br />
             <br />
-            <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="facultyID" DataSourceID="SqlDataSource1" Height="127px" OnPageIndexChanging="DetailsView1_PageIndexChanging" Width="550px">
+            <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="facultyID" DataSourceID="SqlDataSource1" Height="127px" OnPageIndexChanging="DetailsView1_PageIndexChanging" Width="550px" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                <CommandRowStyle BackColor="#E2DED6" Font-Bold="True" />
+                <EditRowStyle BackColor="#999999" />
+                <FieldHeaderStyle BackColor="#E9ECF1" Font-Bold="True" />
                 <Fields>
                     <asp:BoundField DataField="facultyID" HeaderText="facultyID" ReadOnly="True" SortExpression="facultyID" />
                     <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
@@ -136,6 +147,10 @@ h1{
                     <asp:BoundField DataField="deanID" HeaderText="deanID" SortExpression="deanID" />
                     <asp:BoundField DataField="chairID" HeaderText="chairID" SortExpression="chairID" />
                 </Fields>
+                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
             </asp:DetailsView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT [facultyID], [firstName], [lastName], [deanID], [chairID] FROM [faculty]"></asp:SqlDataSource>
         </div>

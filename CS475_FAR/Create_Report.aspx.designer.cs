@@ -78,6 +78,24 @@ namespace CS475_FAR
         protected global::System.Web.UI.WebControls.TextBox txtLastName;
 
         /// <summary>
+        /// lblFacultyID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFacultyID;
+
+        /// <summary>
+        /// txtFacultyID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFacultyID;
+
+        /// <summary>
         /// lblDept control.
         /// </summary>
         /// <remarks>
@@ -94,15 +112,6 @@ namespace CS475_FAR
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDeptName;
-
-        /// <summary>
-        /// FileUpload1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
 
         /// <summary>
         /// lblTeaching control.

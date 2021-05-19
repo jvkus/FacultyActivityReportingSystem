@@ -6,98 +6,24 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style ="background-color:lightgrey;">
+    <style>
+
+        h1{
+            text-align:center;
+        }
+    </style>
+
     <form id="form1" runat="server">
+  <div>
+        <img alt="" src="Elmhurst_University_logo.png" height="100"/></div>
         <h1>Reports</h1>
-        <div>
+      
 
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" AutoGenerateEditButton="True" DataKeyNames="reportDate" DataSourceID="dtReport" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None" Height="396px" Width="16px">
-                <AlternatingRowStyle BackColor="White" />
+         
+        <asp:GridView ID="deasutReportGV" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="reportDate" DataSourceID="deasutReport" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <AlternatingRowStyle BackColor="White" />
             <Columns>
-                    <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
-                    <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
-                <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
-                    <asp:BoundField DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
-                    <asp:BoundField DataField="teachingA" HeaderText="teachingA" SortExpression="teachingA" />
-                    <asp:BoundField DataField="teachingB" HeaderText="teachingB" SortExpression="teachingB" />
-                    <asp:BoundField DataField="serviceA" HeaderText="serviceA" SortExpression="serviceA" />
-                    <asp:BoundField DataField="serviceB" HeaderText="serviceB" SortExpression="serviceB" />
-                    <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
-                    <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
-                    <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
-            </Columns>
-                <EditRowStyle BackColor="#2461BF" />
-                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#EFF3FB" />
-                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                <SortedDescendingHeaderStyle BackColor="#4870BE" />
-            </asp:GridView>
-            <asp:SqlDataSource ID="dtReport" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" DeleteCommand="DELETE FROM [Reports] WHERE [reportDate] = @original_reportDate AND [firstName] = @original_firstName AND (([lastName] = @original_lastName) OR ([lastName] IS NULL AND @original_lastName IS NULL)) AND (([departmentName] = @original_departmentName) OR ([departmentName] IS NULL AND @original_departmentName IS NULL)) AND (([teachingA] = @original_teachingA) OR ([teachingA] IS NULL AND @original_teachingA IS NULL)) AND (([teachingB] = @original_teachingB) OR ([teachingB] IS NULL AND @original_teachingB IS NULL)) AND (([serviceA] = @original_serviceA) OR ([serviceA] IS NULL AND @original_serviceA IS NULL)) AND (([serviceB] = @original_serviceB) OR ([serviceB] IS NULL AND @original_serviceB IS NULL)) AND (([scholarlyA] = @original_scholarlyA) OR ([scholarlyA] IS NULL AND @original_scholarlyA IS NULL)) AND (([scholarlyB] = @original_scholarlyB) OR ([scholarlyB] IS NULL AND @original_scholarlyB IS NULL)) AND (([narrative] = @original_narrative) OR ([narrative] IS NULL AND @original_narrative IS NULL))" InsertCommand="INSERT INTO [Reports] ([reportDate], [firstName], [lastName], [departmentName], [teachingA], [teachingB], [serviceA], [serviceB], [scholarlyA], [scholarlyB], [narrative]) VALUES (@reportDate, @firstName, @lastName, @departmentName, @teachingA, @teachingB, @serviceA, @serviceB, @scholarlyA, @scholarlyB, @narrative)" OldValuesParameterFormatString="original_{0}" OnSelecting="dtReport_Selecting" SelectCommand="SELECT * FROM [Reports]" UpdateCommand="UPDATE [Reports] SET [firstName] = @firstName, [lastName] = @lastName, [departmentName] = @departmentName, [teachingA] = @teachingA, [teachingB] = @teachingB, [serviceA] = @serviceA, [serviceB] = @serviceB, [scholarlyA] = @scholarlyA, [scholarlyB] = @scholarlyB, [narrative] = @narrative WHERE [reportDate] = @original_reportDate AND [firstName] = @original_firstName AND (([lastName] = @original_lastName) OR ([lastName] IS NULL AND @original_lastName IS NULL)) AND (([departmentName] = @original_departmentName) OR ([departmentName] IS NULL AND @original_departmentName IS NULL)) AND (([teachingA] = @original_teachingA) OR ([teachingA] IS NULL AND @original_teachingA IS NULL)) AND (([teachingB] = @original_teachingB) OR ([teachingB] IS NULL AND @original_teachingB IS NULL)) AND (([serviceA] = @original_serviceA) OR ([serviceA] IS NULL AND @original_serviceA IS NULL)) AND (([serviceB] = @original_serviceB) OR ([serviceB] IS NULL AND @original_serviceB IS NULL)) AND (([scholarlyA] = @original_scholarlyA) OR ([scholarlyA] IS NULL AND @original_scholarlyA IS NULL)) AND (([scholarlyB] = @original_scholarlyB) OR ([scholarlyB] IS NULL AND @original_scholarlyB IS NULL)) AND (([narrative] = @original_narrative) OR ([narrative] IS NULL AND @original_narrative IS NULL))">
-                <DeleteParameters>
-                    <asp:Parameter Name="original_reportDate" Type="String" />
-                    <asp:Parameter Name="original_firstName" Type="String" />
-                    <asp:Parameter Name="original_lastName" Type="String" />
-                    <asp:Parameter Name="original_departmentName" Type="String" />
-                    <asp:Parameter Name="original_teachingA" Type="String" />
-                    <asp:Parameter Name="original_teachingB" Type="String" />
-                    <asp:Parameter Name="original_serviceA" Type="String" />
-                    <asp:Parameter Name="original_serviceB" Type="String" />
-                    <asp:Parameter Name="original_scholarlyA" Type="String" />
-                    <asp:Parameter Name="original_scholarlyB" Type="String" />
-                    <asp:Parameter Name="original_narrative" Type="String" />
-                </DeleteParameters>
-                <InsertParameters>
-                    <asp:Parameter Name="reportDate" Type="String" />
-                    <asp:Parameter Name="firstName" Type="String" />
-                    <asp:Parameter Name="lastName" Type="String" />
-                    <asp:Parameter Name="departmentName" Type="String" />
-                    <asp:Parameter Name="teachingA" Type="String" />
-                    <asp:Parameter Name="teachingB" Type="String" />
-                    <asp:Parameter Name="serviceA" Type="String" />
-                    <asp:Parameter Name="serviceB" Type="String" />
-                    <asp:Parameter Name="scholarlyA" Type="String" />
-                    <asp:Parameter Name="scholarlyB" Type="String" />
-                    <asp:Parameter Name="narrative" Type="String" />
-                </InsertParameters>
-                <UpdateParameters>
-                    <asp:Parameter Name="firstName" Type="String" />
-                    <asp:Parameter Name="lastName" Type="String" />
-                    <asp:Parameter Name="departmentName" Type="String" />
-                    <asp:Parameter Name="teachingA" Type="String" />
-                    <asp:Parameter Name="teachingB" Type="String" />
-                    <asp:Parameter Name="serviceA" Type="String" />
-                    <asp:Parameter Name="serviceB" Type="String" />
-                    <asp:Parameter Name="scholarlyA" Type="String" />
-                    <asp:Parameter Name="scholarlyB" Type="String" />
-                    <asp:Parameter Name="narrative" Type="String" />
-                   
-                    <asp:Parameter Name="original_reportDate" Type="String" />
-                    <asp:Parameter Name="original_firstName" Type="String" />
-                    <asp:Parameter Name="original_lastName" Type="String" />
-                    <asp:Parameter Name="original_departmentName" Type="String" />
-                    <asp:Parameter Name="original_teachingA" Type="String" />
-                    <asp:Parameter Name="original_teachingB" Type="String" />
-                    <asp:Parameter Name="original_serviceA" Type="String" />
-                    <asp:Parameter Name="original_serviceB" Type="String" />
-                    <asp:Parameter Name="original_scholarlyA" Type="String" />
-                    <asp:Parameter Name="original_scholarlyB" Type="String" />
-                    <asp:Parameter Name="original_narrative" Type="String" />
-                   
-                </UpdateParameters>
-            </asp:SqlDataSource>
-
-        </div>
-        <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" AutoGenerateRows="False" CellPadding="4" DataKeyNames="reportDate" DataSourceID="dtReport" ForeColor="#333333" GridLines="None" Height="50px" Width="699px">
-            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-            <CommandRowStyle BackColor="#E2DED6" Font-Bold="True" />
-            <EditRowStyle BackColor="#999999" />
-            <FieldHeaderStyle BackColor="#E9ECF1" Font-Bold="True" />
-            <Fields>
                 <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
                 <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
                 <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
@@ -109,132 +35,215 @@
                 <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
                 <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
                 <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
-            </Fields>
+            </Columns>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+            <SortedAscendingCellStyle BackColor="#FDF5AC" />
+            <SortedAscendingHeaderStyle BackColor="#4D0000" />
+            <SortedDescendingCellStyle BackColor="#FCF6C0" />
+            <SortedDescendingHeaderStyle BackColor="#820000" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="deasutReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [deasutReport]"></asp:SqlDataSource>
+        <br />
+        <br />
+        <br />
+        <br />
+        <asp:GridView ID="samjamReportGV" runat="server" AutoGenerateColumns="False" DataKeyNames="reportDate" DataSourceID="samjamReport" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <AlternatingRowStyle BackColor="White" />
+            <Columns>
+                <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
+                <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
+                <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
+                <asp:BoundField DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
+                <asp:BoundField DataField="teachingA" HeaderText="teachingA" SortExpression="teachingA" />
+                <asp:BoundField DataField="teachingB" HeaderText="teachingB" SortExpression="teachingB" />
+                <asp:BoundField DataField="serviceA" HeaderText="serviceA" SortExpression="serviceA" />
+                <asp:BoundField DataField="serviceB" HeaderText="serviceB" SortExpression="serviceB" />
+                <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
+                <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
+                <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
+            </Columns>
+            <EditRowStyle BackColor="#2461BF" />
+            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#EFF3FB" />
+            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="samjamReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [samjamReport]"></asp:SqlDataSource>
+        <asp:GridView ID="tomjefReportGV" runat="server" AutoGenerateColumns="False" DataKeyNames="reportDate" DataSourceID="tomjefReport" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <AlternatingRowStyle BackColor="White" />
+            <Columns>
+                <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
+                <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
+                <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
+                <asp:BoundField DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
+                <asp:BoundField DataField="teachingA" HeaderText="teachingA" SortExpression="teachingA" />
+                <asp:BoundField DataField="teachingB" HeaderText="teachingB" SortExpression="teachingB" />
+                <asp:BoundField DataField="serviceA" HeaderText="serviceA" SortExpression="serviceA" />
+                <asp:BoundField DataField="serviceB" HeaderText="serviceB" SortExpression="serviceB" />
+                <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
+                <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
+                <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
+            </Columns>
+            <EditRowStyle BackColor="#7C6F57" />
+            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#E3EAEB" />
+            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F8FAFA" />
+            <SortedAscendingHeaderStyle BackColor="#246B61" />
+            <SortedDescendingCellStyle BackColor="#D4DFE1" />
+            <SortedDescendingHeaderStyle BackColor="#15524A" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="tomjefReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [tomjefReport]"></asp:SqlDataSource>
+        <asp:GridView ID="camjefReportGV" runat="server" AutoGenerateColumns="False" DataKeyNames="reportDate" DataSourceID="camjefReport" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+            <Columns>
+                <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
+                <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
+                <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
+                <asp:BoundField DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
+                <asp:BoundField DataField="teachingA" HeaderText="teachingA" SortExpression="teachingA" />
+                <asp:BoundField DataField="teachingB" HeaderText="teachingB" SortExpression="teachingB" />
+                <asp:BoundField DataField="serviceA" HeaderText="serviceA" SortExpression="serviceA" />
+                <asp:BoundField DataField="serviceB" HeaderText="serviceB" SortExpression="serviceB" />
+                <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
+                <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
+                <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
+            </Columns>
+            <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-        </asp:DetailsView>
-        <asp:FormView ID="FormView1" runat="server" AllowPaging="True" CellPadding="4" DataKeyNames="reportDate" DataSourceID="dtReport" ForeColor="#333333" Width="652px">
-            <EditItemTemplate>
-                reportDate:
-                <asp:Label ID="reportDateLabel1" runat="server" Text='<%# Eval("reportDate") %>' />
-                <br />
-                firstName:
-                <asp:TextBox ID="firstNameTextBox" runat="server" Text='<%# Bind("firstName") %>' />
-                <br />
-                lastName:
-                <asp:TextBox ID="lastNameTextBox" runat="server" Text='<%# Bind("lastName") %>' />
-                <br />
-                departmentName:
-                <asp:TextBox ID="departmentNameTextBox" runat="server" Text='<%# Bind("departmentName") %>' />
-                <br />
-                teachingA:
-                <asp:TextBox ID="teachingATextBox" runat="server" Text='<%# Bind("teachingA") %>' />
-                <br />
-                teachingB:
-                <asp:TextBox ID="teachingBTextBox" runat="server" Text='<%# Bind("teachingB") %>' />
-                <br />
-                serviceA:
-                <asp:TextBox ID="serviceATextBox" runat="server" Text='<%# Bind("serviceA") %>' />
-                <br />
-                serviceB:
-                <asp:TextBox ID="serviceBTextBox" runat="server" Text='<%# Bind("serviceB") %>' />
-                <br />
-                scholarlyA:
-                <asp:TextBox ID="scholarlyATextBox" runat="server" Text='<%# Bind("scholarlyA") %>' />
-                <br />
-                scholarlyB:
-                <asp:TextBox ID="scholarlyBTextBox" runat="server" Text='<%# Bind("scholarlyB") %>' />
-                <br />
-                narrative:
-                <asp:TextBox ID="narrativeTextBox" runat="server" Text='<%# Bind("narrative") %>' />
-                <br />
-                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
-                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-            </EditItemTemplate>
-            <EditRowStyle BackColor="#2461BF" />
-            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-            <InsertItemTemplate>
-                reportDate:
-                <asp:TextBox ID="reportDateTextBox" runat="server" Text='<%# Bind("reportDate") %>' />
-                <br />
-                firstName:
-                <asp:TextBox ID="firstNameTextBox" runat="server" Text='<%# Bind("firstName") %>' />
-                <br />
-                lastName:
-                <asp:TextBox ID="lastNameTextBox" runat="server" Text='<%# Bind("lastName") %>' />
-                <br />
-                departmentName:
-                <asp:TextBox ID="departmentNameTextBox" runat="server" Text='<%# Bind("departmentName") %>' />
-                <br />
-                teachingA:
-                <asp:TextBox ID="teachingATextBox" runat="server" Text='<%# Bind("teachingA") %>' />
-                <br />
-                teachingB:
-                <asp:TextBox ID="teachingBTextBox" runat="server" Text='<%# Bind("teachingB") %>' />
-                <br />
-                serviceA:
-                <asp:TextBox ID="serviceATextBox" runat="server" Text='<%# Bind("serviceA") %>' />
-                <br />
-                serviceB:
-                <asp:TextBox ID="serviceBTextBox" runat="server" Text='<%# Bind("serviceB") %>' />
-                <br />
-                scholarlyA:
-                <asp:TextBox ID="scholarlyATextBox" runat="server" Text='<%# Bind("scholarlyA") %>' />
-                <br />
-                scholarlyB:
-                <asp:TextBox ID="scholarlyBTextBox" runat="server" Text='<%# Bind("scholarlyB") %>' />
-                <br />
-                narrative:
-                <asp:TextBox ID="narrativeTextBox" runat="server" Text='<%# Bind("narrative") %>' />
-                <br />
-                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-            </InsertItemTemplate>
-            <ItemTemplate>
-                reportDate:
-                <asp:Label ID="reportDateLabel" runat="server" Text='<%# Eval("reportDate") %>' />
-                <br />
-                firstName:
-                <asp:Label ID="firstNameLabel" runat="server" Text='<%# Bind("firstName") %>' />
-                <br />
-                lastName:
-                <asp:Label ID="lastNameLabel" runat="server" Text='<%# Bind("lastName") %>' />
-                <br />
-                departmentName:
-                <asp:Label ID="departmentNameLabel" runat="server" Text='<%# Bind("departmentName") %>' />
-                <br />
-                teachingA:
-                <asp:Label ID="teachingALabel" runat="server" Text='<%# Bind("teachingA") %>' />
-                <br />
-                teachingB:
-                <asp:Label ID="teachingBLabel" runat="server" Text='<%# Bind("teachingB") %>' />
-                <br />
-                serviceA:
-                <asp:Label ID="serviceALabel" runat="server" Text='<%# Bind("serviceA") %>' />
-                <br />
-                serviceB:
-                <asp:Label ID="serviceBLabel" runat="server" Text='<%# Bind("serviceB") %>' />
-                <br />
-                scholarlyA:
-                <asp:Label ID="scholarlyALabel" runat="server" Text='<%# Bind("scholarlyA") %>' />
-                <br />
-                scholarlyB:
-                <asp:Label ID="scholarlyBLabel" runat="server" Text='<%# Bind("scholarlyB") %>' />
-                <br />
-                narrative:
-                <asp:Label ID="narrativeLabel" runat="server" Text='<%# Bind("narrative") %>' />
-                <br />
-                <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
-                &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
-                &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
-            </ItemTemplate>
-            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#EFF3FB" />
-        </asp:FormView>
+            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#E9E7E2" />
+            <SortedAscendingHeaderStyle BackColor="#506C8C" />
+            <SortedDescendingCellStyle BackColor="#FFFDF8" />
+            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="camjefReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [camjefReport]"></asp:SqlDataSource>
+        <asp:GridView ID="johsmiReportGV" runat="server" AutoGenerateColumns="False" DataKeyNames="reportDate" DataSourceID="johsmiReport" Visible="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+            <Columns>
+                <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
+                <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
+                <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
+                <asp:BoundField DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
+                <asp:BoundField DataField="teachingA" HeaderText="teachingA" SortExpression="teachingA" />
+                <asp:BoundField DataField="teachingB" HeaderText="teachingB" SortExpression="teachingB" />
+                <asp:BoundField DataField="serviceA" HeaderText="serviceA" SortExpression="serviceA" />
+                <asp:BoundField DataField="serviceB" HeaderText="serviceB" SortExpression="serviceB" />
+                <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
+                <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
+                <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
+            </Columns>
+            <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+            <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+            <RowStyle BackColor="White" ForeColor="#330099" />
+            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+            <SortedAscendingCellStyle BackColor="#FEFCEB" />
+            <SortedAscendingHeaderStyle BackColor="#AF0101" />
+            <SortedDescendingCellStyle BackColor="#F6F0C0" />
+            <SortedDescendingHeaderStyle BackColor="#7E0000" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="johsmiReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [johsmiReport]"></asp:SqlDataSource>
+        <br />
+        <br />
+        &nbsp;<asp:GridView ID="melsmiReportGV" runat="server" AutoGenerateColumns="False" DataKeyNames="reportDate" DataSourceID="melsmiReport" Visible="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+            <Columns>
+                <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
+                <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
+                <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
+                <asp:BoundField DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
+                <asp:BoundField DataField="teachingA" HeaderText="teachingA" SortExpression="teachingA" />
+                <asp:BoundField DataField="teachingB" HeaderText="teachingB" SortExpression="teachingB" />
+                <asp:BoundField DataField="serviceA" HeaderText="serviceA" SortExpression="serviceA" />
+                <asp:BoundField DataField="serviceB" HeaderText="serviceB" SortExpression="serviceB" />
+                <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
+                <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
+                <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
+            </Columns>
+            <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+            <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+            <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+            <RowStyle BackColor="White" ForeColor="#003399" />
+            <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+            <SortedAscendingCellStyle BackColor="#EDF6F6" />
+            <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+            <SortedDescendingCellStyle BackColor="#D6DFDF" />
+            <SortedDescendingHeaderStyle BackColor="#002876" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="melsmiReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [melsmiReport]"></asp:SqlDataSource>
+        <br />
+        <asp:GridView ID="camwalReportGV" runat="server" AutoGenerateColumns="False" DataKeyNames="reportDate" DataSourceID="camwalReport" Visible="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
+            <Columns>
+                <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
+                <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
+                <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
+                <asp:BoundField DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
+                <asp:BoundField DataField="teachingA" HeaderText="teachingA" SortExpression="teachingA" />
+                <asp:BoundField DataField="teachingB" HeaderText="teachingB" SortExpression="teachingB" />
+                <asp:BoundField DataField="serviceA" HeaderText="serviceA" SortExpression="serviceA" />
+                <asp:BoundField DataField="serviceB" HeaderText="serviceB" SortExpression="serviceB" />
+                <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
+                <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
+                <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
+            </Columns>
+            <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+            <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+            <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+            <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#FFF1D4" />
+            <SortedAscendingHeaderStyle BackColor="#B95C30" />
+            <SortedDescendingCellStyle BackColor="#F1E5CE" />
+            <SortedDescendingHeaderStyle BackColor="#93451F" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="camwalReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [camwalReport]"></asp:SqlDataSource>
+        <br />
+        <br />
+        <br />
+        <asp:GridView ID="deanReportGV" runat="server" AutoGenerateColumns="False" CellPadding="3" DataKeyNames="reportDate" DataSourceID="hensmiReportGV" GridLines="Horizontal" Visible="False" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px">
+            <AlternatingRowStyle BackColor="#F7F7F7" />
+            <Columns>
+                <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
+                <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
+                <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
+                <asp:BoundField DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
+                <asp:BoundField DataField="teachingA" HeaderText="teachingA" SortExpression="teachingA" />
+                <asp:BoundField DataField="teachingB" HeaderText="teachingB" SortExpression="teachingB" />
+                <asp:BoundField DataField="serviceA" HeaderText="serviceA" SortExpression="serviceA" />
+                <asp:BoundField DataField="serviceB" HeaderText="serviceB" SortExpression="serviceB" />
+                <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
+                <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
+                <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
+                <asp:BoundField DataField="facultyID" HeaderText="facultyID" SortExpression="facultyID" />
+            </Columns>
+            <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
+            <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
+            <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
+            <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
+            <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
+            <SortedAscendingCellStyle BackColor="#F4F4FD" />
+            <SortedAscendingHeaderStyle BackColor="#5A4C9D" />
+            <SortedDescendingCellStyle BackColor="#D8D8F0" />
+            <SortedDescendingHeaderStyle BackColor="#3E3277" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="hensmiReportGV" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [Reports]"></asp:SqlDataSource>
+        <br />
+        <asp:Button ID="btnDownload" runat="server" OnClick="btnDownload_Click" Text="Download" />
+        <br />
+        <br />
     </form>
 </body>
 </html>

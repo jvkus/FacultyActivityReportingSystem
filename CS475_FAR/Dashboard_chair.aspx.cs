@@ -11,7 +11,12 @@ namespace CS475_FAR
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+            if (Session["user"] != null)
+            {
+
+                Label1.Text = Session["user"].ToString();
+
+            }
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)

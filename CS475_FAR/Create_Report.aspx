@@ -295,7 +295,7 @@ h1{
                         <asp:Label ID="lblFirstName0" runat="server" Text="Year of Report:"></asp:Label>
                     </td>
                     <td class="auto-style9">
-                        <asp:TextBox ID="txtReportDate" runat="server" CssClass="auto-style29" OnTextChanged="txtFirstName_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtReportDate" runat="server" CssClass="auto-style29" OnTextChanged="txtReportDate_TextChanged"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -308,8 +308,10 @@ h1{
                     <td class="auto-style18">
                         </td>
                     <td class="auto-style31">
+                        <asp:Label ID="lblFacultyID" runat="server" Text="Faculty ID:"></asp:Label>
                         </td>
                     <td class="auto-style6">
+                        <asp:TextBox ID="txtFacultyID" runat="server" CssClass="auto-style29" OnTextChanged="txtFacultyID_TextChanged"></asp:TextBox>
                         </td>
                 </tr>
                 <tr>
@@ -331,8 +333,7 @@ h1{
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style20">&nbsp;</td>
                     <td class="auto-style33">
-                    <asp:FileUpload ID="FileUpload1" runat="server" />
-                    </td>
+                        &nbsp;</td>
                     <td>
                         &nbsp;</td>
                 </tr>

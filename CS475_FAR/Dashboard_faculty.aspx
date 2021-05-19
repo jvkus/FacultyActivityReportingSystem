@@ -4,12 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
 
-    </head>
-<body>
-
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
 
      <style>@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
@@ -35,7 +31,8 @@ body{
   height: 100%;
   background: #555555;
   padding: 30px 0px;
-  position: fixed;
+  position:fixed;
+  
 }
 
 .wrapper .sidebar h2{
@@ -73,6 +70,7 @@ body{
 .wrapper .main_content{
   width: 100%;
   margin-left: 200px;
+  position:sticky;
 }
 
 .wrapper .main_content .header{
@@ -131,12 +129,67 @@ h1{
              margin-top: 0;
          }
 
+         .auto-style3 {
+             width: 100%;
+         }
+         .auto-style5 {
+             width: 316px;
+             height: 102px;
+         }
+
+         .auto-style7 {
+             height: 74px;
+             margin-left:443px;
+             margin-bottom:0px;
+             width: 457px;
+         }
+         .auto-style7 label Label1 {
+             font-size:50px;
+         }
+        h1.auto-style7{
+            font-size:16px;
+            margin-left:auto;
+        }
+       
+        img.auto-style3{
+            left:auto;
+        }
+         .auto-style8 {
+             margin-right: 50px;
+         }
+         .auto-style9 {
+             height: 102px;
+         }
      </style>
-    <form id="form2" runat="server">
-        <div>
-            <h1>Welcome,&nbsp;
+    <title></title>
+
+    </head>
+<body>
+
+
+
+     <form id="form2" runat="server">
+         <div>
+             <div>
+                <table class="auto-style3">
+                    <tr>
+                        <td class="auto-style5">
+                <img alt="" src="Elmhurst_University_logo.png" height="100" class="auto-style8" /></td>
+                        <td class="auto-style9">
+                            <h1 class="auto-style7">Welcome, 
                 <asp:Label ID="Label1" runat="server"></asp:Label>
-            </h1>
+               <br />
+                            <asp:Button ID="logoffBtn" runat="server" CssClass="btn btn-dark"
+
+                                ForeColor="white" OnClick="logoffBtn_Click" Text="Logout" Height="36px" Width="141px" />
+                </h1>
+                        </td>
+                    </tr>
+                    </table>
+           
+                <br />
+           
+                </div>
         </div>
 
 <%--        this tag is to display icons in the sidebar--%>
@@ -150,17 +203,14 @@ h1{
         <ul>
             <li><a href="dashboard_faculty.aspx"><i class="fas fa-home"></i>Home</a></li>
             <li><a href="profile.aspx"><i class="fas fa-user"></i>Profile</a></li>
-            <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
-            <li><a href="Reports.aspx"><i class="fas fa-folder"></i>Reports</a></li>
-            <%-- for extra pages --%>
-      <%--      <li><a href="#"><i class="fas fa-blog"></i></a></li>
+            <li><a href="about.aspx"><i class="fas fa-address-card"></i>About</a></li>
+                <%--  <li><a href="Reports.aspx"><i class="fas fa-folder"></i>Reports</a></li>--%>            <%-- for extra pages --%>      <%--      <li><a href="#"><i class="fas fa-blog"></i></a></li>
             <li><a href="#"><i class="fas fa-address-book"></i></a></li>
             <li><a href="#"><i class="fas fa-map-pin"></i></a></li>--%>
         </ul> 
         
     </div>
     <div class="main_content">
-        <%-- make this a collapsible panel --%>
 
         <div class="header"><h3>Schedule<asp:SqlDataSource ID="scheduleJohn" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString %>" SelectCommand="SELECT * FROM [johnsmithSchedule]">
   
@@ -190,18 +240,23 @@ h1{
                 </asp:GridView>
             </div>
         </div>
-        <div class="header">
-            <h3>General Information  </h3>
-           <asp:LinkButton ID="linkContact"  runat="server" OnClick="linkContact_Click" Text="Contact & Personal information"/>
-
-        
-       </div>
                 
         
-         <div class="header" style="height: 138px">
+         <div class="header" style="height: 160px">
              <h3 class="auto-style1">Reports</h3>
              <asp:LinkButton class="linkCreateReport" runat="server" OnClick="linkCreateReport_Click" text="Create a new report"/>
-             <br/> </div>
+             <br />
+            <asp:LinkButton class="Reports" runat="server" OnClick="linkReport_Click" text="View Reports" ID="LinkButton1"/>
+
+
+             <br />
+
+
+             <br />
+             <br />
+                     
+
+         </div>
             
         </div>
        

@@ -60,8 +60,6 @@ namespace CS475_FAR
 
 
 
-
-
             }
 
 
@@ -85,6 +83,7 @@ namespace CS475_FAR
 
         protected void linkCreateReport_Click(object sender, EventArgs e)
         {
+
             Response.Redirect("Create_Report.aspx");
 
         }
@@ -98,5 +97,20 @@ namespace CS475_FAR
         {
 
         }
+
+       
+        protected void linkReport_Click(object sender, EventArgs e)
+        {
+
+                Response.Redirect("Reports.aspx");
+            
+        }
+
+        protected void logoffBtn_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Response.Redirect("loginPage.aspx");
+        }
     }
+    
 }

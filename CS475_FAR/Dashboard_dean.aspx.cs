@@ -13,5 +13,16 @@ namespace CS475_FAR
         {
 
         }
+
+        protected void linkReports_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Reports.aspx");
+
+        }
+
+        protected void DetailsView1_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+        {
+
+        }
     }
-}
+    }

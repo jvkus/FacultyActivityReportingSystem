@@ -33,6 +33,15 @@ namespace CS475_FAR
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
+        /// logoffBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button logoffBtn;
+
+        /// <summary>
         /// scheduleJohn control.
         /// </summary>
         /// <remarks>
@@ -51,12 +60,12 @@ namespace CS475_FAR
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// linkContact control.
+        /// LinkButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton linkContact;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
     }
 }

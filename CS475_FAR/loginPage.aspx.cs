@@ -26,19 +26,26 @@ namespace CS475_FAR
             DropDownList1.Items.Add("dean");
             DropDownList1.Items.Add("chair");
             DropDownList1.Items.Add("faculty");
-
+           
 
 
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            
 
             string userSam = TextBox1.Text.Trim();
             string userTom = TextBox1.Text.Trim();
             string user = TextBox1.Text.Trim();
             string userMelsmi = TextBox1.Text.Trim();
+            string userCamwal = TextBox1.Text.Trim();
+            string userDeasut = TextBox1.Text.Trim();
+            string userCamjef = TextBox1.Text.Trim();
+            string userHensmi = TextBox1.Text.Trim();
+
+
+
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ConnectionString);
             con.Open();
@@ -67,6 +74,27 @@ namespace CS475_FAR
                 Session["samjam"] = userSam;
                 Session["tomjef"] = userTom;
                 Session["melsmi"] = userMelsmi;
+                Session["camwal"] = userCamwal;
+                Session["deasut"] = userDeasut;
+                Session["camjef"] = userCamjef;
+                Session["hensmi"] = userHensmi;
+
+
+                //Roles chairRole = new Roles();
+                //userMelsmi = chairRole.username;
+                //Roles roles = new Roles();
+                //userCamwal = roles.username;
+
+                //if (chairRole.username == userMelsmi)
+                //{
+                //    userMelsmi = "computer science";
+                //    user = Session["melsmi"].ToString();
+                //}
+                //if (roles.username == userCamwal)
+                //{
+                //    userCamwal = "history";
+                //    user = Session["camwal"].ToString();
+                //}
 
                 if (DropDownList1.SelectedItem.Value == "admin" && userType == "admin")
 

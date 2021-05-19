@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="CS475_FAR.WebForm2" %>
+﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="CS475_FAR.WebForm2" %>
 
 <!DOCTYPE html>
 
@@ -40,4 +40,4 @@
         </div>
     </form>
 </body>
-</html>
+</html>--%>
