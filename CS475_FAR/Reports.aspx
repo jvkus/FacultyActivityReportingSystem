@@ -4,19 +4,38 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+
     <title></title>
 </head>
 <body style ="background-color:lightgrey;">
     <style>
 
+
+
         h1{
             text-align:center;
         }
-    </style>
+        .auto-style1 {
+            width: 100%;
+        }
+        </style>
 
     <form id="form1" runat="server">
   <div>
-        <img alt="" src="Elmhurst_University_logo.png" height="100"/></div>
+        <img alt="" src="Elmhurst_University_logo.png" height="100"/><table class="auto-style1">
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <asp:Button ID="btnHome" runat="server" CssClass="btn btn-primary" Height="41px" OnClick="btnHome_Click" Text="HOME" Width="95px" style="margin-left: 980px" />
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+        </div>
         <h1>Reports</h1>
       
 
@@ -241,7 +260,31 @@
         </asp:GridView>
         <asp:SqlDataSource ID="hensmiReportGV" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [Reports]"></asp:SqlDataSource>
         <br />
-        <asp:Button ID="btnDownload" runat="server" OnClick="btnDownload_Click" Text="Download" />
+        <asp:Button ID="btnDownloadSamjam" runat="server" OnClick="btnDownloadSamjam_Click" Text="Download" Height="41px" Width="112px" />
+        <br />
+        <br />
+        <asp:Button ID="btnDownloadDeasut" runat="server" OnClick="btnDownloadDeasut_Click" Text="Download" Height="41px" Width="112px" />
+        <br />
+        <br />
+        <asp:Button ID="btnDownloadTomjef" runat="server" OnClick="btnDownloadTomjef_Click" Text="Download" Height="41px" Width="112px" />
+        <br />
+        <br />
+        <asp:Button ID="btnDownloadCamjef" runat="server" OnClick="btnDownloadCamjef_Click" Text="Download" Height="41px" Width="112px" />
+        <br />
+        <br />
+        <asp:Button ID="btnDownloadHensmi" runat="server" OnClick="btnDownloadHensmi_Click" Text="Download" Height="41px" Width="112px" />
+        <br />
+        <br />
+        <asp:Button ID="btnDownloadJohsmi" runat="server" OnClick="btnDownloadJohsmi_Click" Text="Download" Height="41px" Width="112px" />
+        <br />
+        <br />
+        <asp:Button ID="btnDownloadMelsmi" runat="server" OnClick="btnDownloadMelsmi_Click" Text="Download" Height="41px" Width="112px" />
+        <br />
+        <br />
+        <asp:Button ID="btnDownloadCamwal" runat="server" OnClick="btnDownloadCamwal_Click" Text="Download" Height="41px" Width="112px" />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
     </form>

@@ -43,6 +43,8 @@ namespace CS475_FAR
             string userDeasut = TextBox1.Text.Trim();
             string userCamjef = TextBox1.Text.Trim();
             string userHensmi = TextBox1.Text.Trim();
+            string userJohsmi = TextBox1.Text.Trim();
+
 
 
 
@@ -78,6 +80,7 @@ namespace CS475_FAR
                 Session["deasut"] = userDeasut;
                 Session["camjef"] = userCamjef;
                 Session["hensmi"] = userHensmi;
+                Session["johsmi"] = userJohsmi;
 
 
                 //Roles chairRole = new Roles();

@@ -98,29 +98,53 @@ namespace CS475_FAR
             //Session["deasut"] = userDeasut;
 
             SqlConnection con = new SqlConnection(System.Configuration.
-ConfigurationManager.ConnectionStrings["far_testingConnectionString3"].ToString());  
+ConfigurationManager.ConnectionStrings["far_testingConnectionString3"].ToString());
 
             try
-            {   if (Session["samjam"] != null)
+            {
+                if (Session["deasut"] != null)
                 {
 
-                    string query1 = "insert into samjamReport(facultyID, reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtFacultyID.Text + "','" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
-                    SqlDataAdapter da1 = new SqlDataAdapter(query1, con);
+                    string queryDea2 = "insert into Reports(facultyID, reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtFacultyID.Text + "','" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
+                    SqlDataAdapter daDea2 = new SqlDataAdapter(queryDea2, con);
                     con.Open();
-                    da1.SelectCommand.ExecuteNonQuery();
+                    daDea2.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+
+                    string queryDea3 = "insert into johsmiReport(facultyID, reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtFacultyID.Text + "','" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
+                    SqlDataAdapter daDea3 = new SqlDataAdapter(queryDea3, con);
+                    con.Open();
+                    daDea3.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+
+                    string queryDea = "insert into deasutReport(facultyID, reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtFacultyID.Text + "','" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
+                    SqlDataAdapter daDea = new SqlDataAdapter(queryDea, con);
+                    con.Open();
+                    daDea.SelectCommand.ExecuteNonQuery();
                     con.Close();
 
 
-                    string query3 = "insert into Reports(facultyID, reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtFacultyID.Text + "','" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
-                    SqlDataAdapter da3 = new SqlDataAdapter(query3, con);
+                }
+                if (Session["samjam"] != null)
+                {
+
+                    string querySam = "insert into samjamReport(facultyID, reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtFacultyID.Text + "','" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
+                    SqlDataAdapter daSam = new SqlDataAdapter(querySam, con);
                     con.Open();
-                    da3.SelectCommand.ExecuteNonQuery();
+                    daSam.SelectCommand.ExecuteNonQuery();
                     con.Close();
 
-                    string query2 = "insert into camwalReport(facultyID, reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtFacultyID.Text + "','" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
-                    SqlDataAdapter da2 = new SqlDataAdapter(query2, con);
+
+                    string querySam2 = "insert into Reports(facultyID, reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtFacultyID.Text + "','" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
+                    SqlDataAdapter daSam2 = new SqlDataAdapter(querySam2, con);
                     con.Open();
-                    da2.SelectCommand.ExecuteNonQuery();
+                    daSam2.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+
+                    string querySam3 = "insert into camwalReport(facultyID, reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtFacultyID.Text + "','" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
+                    SqlDataAdapter daSam3 = new SqlDataAdapter(querySam3, con);
+                    con.Open();
+                    daSam3.SelectCommand.ExecuteNonQuery();
                     con.Close();
 
 
@@ -128,7 +152,7 @@ ConfigurationManager.ConnectionStrings["far_testingConnectionString3"].ToString(
 
                 if (Session["tomjef"] != null)
                 {
-                    string queryTom = "insert into tomjefReport(reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
+                    string queryTom = "insert into tomjefReport(facultyID, reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtFacultyID.Text + "','" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
                     SqlDataAdapter daTom = new SqlDataAdapter(queryTom, con);
                     con.Open();
                     daTom.SelectCommand.ExecuteNonQuery();
@@ -136,14 +160,14 @@ ConfigurationManager.ConnectionStrings["far_testingConnectionString3"].ToString(
 
 
 
-                    string queryTom2 = "insert into Reports(reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
+                    string queryTom2 = "insert into Reports(facultyID, reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtFacultyID.Text + "','" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
                     SqlDataAdapter daTom2 = new SqlDataAdapter(queryTom2, con);
                     con.Open();
                     daTom2.SelectCommand.ExecuteNonQuery();
                     con.Close();
 
 
-                    string queryTom3 = "insert into camwalReport(reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
+                    string queryTom3 = "insert into camwalReport(facultyID, reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtFacultyID.Text + "','" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
                     SqlDataAdapter daTom3 = new SqlDataAdapter(queryTom3, con);
                     con.Open();
                     daTom3.SelectCommand.ExecuteNonQuery();
@@ -154,44 +178,23 @@ ConfigurationManager.ConnectionStrings["far_testingConnectionString3"].ToString(
 
 
                 }
-                if (Session["deasut"] != null)
-                {
-                    string query1 = "insert into deasutReport(reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
-                    SqlDataAdapter da1 = new SqlDataAdapter(query1, con);
-                    con.Open();
-                    da1.SelectCommand.ExecuteNonQuery();
-                    con.Close();
-
-
-                    string query = "insert into Reports(reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
-                    SqlDataAdapter da = new SqlDataAdapter(query, con);
-                    con.Open();
-                    da.SelectCommand.ExecuteNonQuery();
-                    con.Close();
-
-                    string query2 = "insert into johsmiReport(reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
-                    SqlDataAdapter da2 = new SqlDataAdapter(query2, con);
-                    con.Open();
-                    da2.SelectCommand.ExecuteNonQuery();
-                    con.Close();
-
-                }
+               
                 if (Session["camjef"] != null)
                 {
-                    string query1 = "insert into camjefReport(reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
+                    string query1 = "insert into camjefReport(facultyID, reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtFacultyID.Text + "','" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
                     SqlDataAdapter da1 = new SqlDataAdapter(query1, con);
                     con.Open();
                     da1.SelectCommand.ExecuteNonQuery();
                     con.Close();
 
 
-                    string query = "insert into Reports(reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
+                    string query = "insert into Reports(facultyID, reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtFacultyID.Text + "','" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
                     SqlDataAdapter da = new SqlDataAdapter(query, con);
                     con.Open();
                     da.SelectCommand.ExecuteNonQuery();
                     con.Close();
 
-                    string query2 = "insert into melsmiReport(reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
+                    string query2 = "insert into melsmiReport(facultyID, reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtFacultyID.Text + "','" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";
                     SqlDataAdapter da2 = new SqlDataAdapter(query, con);
                     con.Open();
                     da.SelectCommand.ExecuteNonQuery();

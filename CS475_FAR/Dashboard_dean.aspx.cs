@@ -11,7 +11,12 @@ namespace CS475_FAR
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["user"] != null)
+            {
 
+                Label1.Text = Session["user"].ToString();
+
+            }
         }
 
         protected void linkReports_Click(object sender, EventArgs e)
@@ -23,6 +28,12 @@ namespace CS475_FAR
         protected void DetailsView1_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
         {
 
+        }
+
+        protected void logoffBtn_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Response.Redirect("loginPage.aspx");
         }
     }
     }
