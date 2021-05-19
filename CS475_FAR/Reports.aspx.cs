@@ -28,7 +28,7 @@ namespace CS475_FAR
                 if (Session["melsmi"] != null)
 
                 {
-                    Roles.CreateRole(Session["meslmi"].ToString());
+                    Roles.CreateRole(Session["melsmi"].ToString());
 
 
                     if (GridView1.Rows[1].Cells[3].Text == "math")
