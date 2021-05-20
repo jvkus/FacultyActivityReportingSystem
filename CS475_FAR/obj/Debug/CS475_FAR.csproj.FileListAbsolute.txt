@@ -323,7 +323,6 @@ C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\Micr
 C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.AspNet.Identity.Core.dll
 C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.AspNet.Identity.Owin.dll
 C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
-C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Owin.dll
 C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Owin.Security.Cookies.dll
 C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Owin.Security.dll
 C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Owin.Security.OAuth.dll
@@ -359,8 +358,6 @@ C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\itex
 C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\itext.svg.xml
 C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\itextsharp.xml
 C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Owin.xml
 C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Owin.Security.xml
 C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Users\e0683858\source\repos\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Owin.Security.OAuth.xml

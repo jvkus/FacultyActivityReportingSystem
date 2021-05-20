@@ -8,6 +8,8 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data.Sql;
 using System.Data;
+using System.Security.Cryptography;
+using System.Text;
 using static System.Exception;
 
 namespace CS475_FAR
@@ -45,15 +47,24 @@ namespace CS475_FAR
             string userHensmi = TextBox1.Text.Trim();
             string userJohsmi = TextBox1.Text.Trim();
 
-
+            string ComputeHash(string input, HashAlgorithm algorithm)
+            {
+                Byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+                Byte[] hashedBytes = algorithm.ComputeHash(inputBytes);
+                return BitConverter.ToString(hashedBytes);
+            }
 
 
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ConnectionString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from Login where userName =@userName and Password=@Password and userType=@userType", con);
+
+            string hashPass = ComputeHash("@Password", new SHA256CryptoServiceProvider());
+            hashPass = hashPass.Replace("-", "");
+
+            SqlCommand cmd = new SqlCommand("select * from Login where userName=@userName and Password='" + hashPass + "' and userType=@userType", con);
             cmd.Parameters.AddWithValue("@userName", TextBox1.Text);
-            cmd.Parameters.AddWithValue("@Password", TextBox2.Text);
+            cmd.Parameters.AddWithValue(hashPass, TextBox2.Text);
             cmd.Parameters.AddWithValue("@userType", DropDownList1.SelectedValue);
 
 
