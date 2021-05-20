@@ -58,7 +58,14 @@ namespace CS475_FAR
 
                 if (Session["user"].ToString() == "melsmi")
                 {
-
+                    btnDownloadHensmi.Visible = false;
+                    btnDownloadCamjef.Visible = false;
+                    btnDownloadCamwal.Visible = false;
+                    btnDownloadDeasut.Visible = false;
+                    btnDownloadJohsmi.Visible = false;
+                    btnDownloadMelsmi.Visible = true;
+                    btnDownloadSamjam.Visible = false;
+                    btnDownloadTomjef.Visible = false;
                     melsmiReportGV.Visible = true;
                    
                     deanReportGV.Visible = false;
@@ -72,7 +79,14 @@ namespace CS475_FAR
 
                 if (Session["user"].ToString() == "camwal")
                 {
-                   
+                    btnDownloadHensmi.Visible = false;
+                    btnDownloadCamjef.Visible = false;
+                    btnDownloadCamwal.Visible = true;
+                    btnDownloadDeasut.Visible = false;
+                    btnDownloadJohsmi.Visible = false;
+                    btnDownloadMelsmi.Visible = false;
+                    btnDownloadSamjam.Visible = false;
+                    btnDownloadTomjef.Visible = false;
                     camwalReportGV.Visible = true;
 
                     deanReportGV.Visible = false;
@@ -119,6 +133,14 @@ namespace CS475_FAR
                     melsmiReportGV.Visible = false;
                     tomjefReportGV.Visible = true;
 
+                    btnDownloadHensmi.Visible = false;
+                    btnDownloadCamjef.Visible = false;
+                    btnDownloadCamwal.Visible = false;
+                    btnDownloadDeasut.Visible = false;
+                    btnDownloadJohsmi.Visible = false;
+                    btnDownloadMelsmi.Visible = false;
+                    btnDownloadSamjam.Visible = false;
+                    btnDownloadTomjef.Visible = true;
                 }
 
                 if (Session["user"].ToString() == "deasut")
@@ -132,7 +154,14 @@ namespace CS475_FAR
                     johsmiReportGV.Visible = false;
                     melsmiReportGV.Visible = false;
                     tomjefReportGV.Visible = false;
-
+                    btnDownloadHensmi.Visible = false;
+                    btnDownloadCamjef.Visible = false;
+                    btnDownloadCamwal.Visible = false;
+                    btnDownloadDeasut.Visible = true;
+                    btnDownloadJohsmi.Visible = false;
+                    btnDownloadMelsmi.Visible = false;
+                    btnDownloadSamjam.Visible = false;
+                    btnDownloadTomjef.Visible = false;
                 }
 
                 if (Session["user"].ToString() == "camjef")
@@ -146,7 +175,14 @@ namespace CS475_FAR
                     johsmiReportGV.Visible = false;
                     melsmiReportGV.Visible = false;
                     tomjefReportGV.Visible = false;
-
+                    btnDownloadHensmi.Visible = false;
+                    btnDownloadCamjef.Visible = true;
+                    btnDownloadCamwal.Visible = false;
+                    btnDownloadDeasut.Visible = false;
+                    btnDownloadJohsmi.Visible = false;
+                    btnDownloadMelsmi.Visible = false;
+                    btnDownloadSamjam.Visible = false;
+                    btnDownloadTomjef.Visible = false;
                 }
 
             }
