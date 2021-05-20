@@ -132,7 +132,7 @@ h1{
                             <asp:Image ID="Image1" runat="server" ImageUrl="~/Elmhurst_University_logo.png" Height="100" />
                         </td>
                         <td class="auto-style2">
-                            <h1 class="auto-style7">Welcome, 
+                            <h1 class="auto-style7">Welcome back, 
                 <asp:Label ID="Label1" runat="server"></asp:Label>
                <br />
                             <asp:Button ID="logoffBtn" runat="server" CssClass="btn btn-dark"
@@ -158,9 +158,9 @@ h1{
         <%-- change some of the icons --%>
         <h2>FARS</h2>
         <ul>
-            <li><a href="dashboard_chair.aspx"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="dashboard_dean.aspx"><i class="fas fa-home"></i>Home</a></li>
 <%--            <li><a href="profile.aspx"><i class="fas fa-user"></i>Profile</a></li>--%>
-            <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
+            <li><a href="about.aspx"><i class="fas fa-address-card"></i>About</a></li>
             <li><a href="reports.aspx"><i class="fas fa-folder"></i>Reports</a></li>
             <%-- for extra pages --%>
       <%--      <li><a href="#"><i class="fas fa-blog"></i></a></li>

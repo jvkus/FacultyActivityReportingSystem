@@ -280,4 +280,3 @@ C:\Users\e0652386\Source\Repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bi
 C:\Users\e0652386\Source\Repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\roslyn\vbc.exe.config
 C:\Users\e0652386\Source\Repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\roslyn\vbc.rsp
 C:\Users\e0652386\Source\Repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\obj\Debug\CS475_FAR.csprojAssemblyReference.cache

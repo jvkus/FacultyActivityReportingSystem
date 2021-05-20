@@ -3,10 +3,11 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head runat="server"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+
     <title></title>
 </head>
-    
 <body>
     <style>@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
@@ -98,13 +99,46 @@ h1{
     margin:20px;
 }
 
-}</style>
+}
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            width: 837px;
+        }
+
+
+
+          .auto-style7 label Label1 {
+             font-size:50px;
+         }
+        h1.auto-style7{
+            font-size:16px;
+            margin-left:auto;
+        }
+    </style>
     <form id="form1" runat="server">
         <div>
             <h1>
-                <img alt="" src="Elmhurst_University_logo.png" height = "100"/></h1>
-            <h1>Welcome Back Chair
+                <table class="auto-style1">
+                    <tr>
+                        <td class="auto-style2">&nbsp;</td>
+                        <td>
+                            <h1 class="auto-style7">Welcome back Chair, 
                 <asp:Label ID="Label1" runat="server"></asp:Label>
+               <br />
+                            <asp:Button ID="logoffBtn" runat="server" CssClass="btn btn-dark"
+
+                                ForeColor="white" OnClick="logoffBtn_Click" Text="Logout" Height="36px" Width="141px" />
+                </h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                <img alt="" src="Elmhurst_University_logo.png" height = "100"/></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
             </h1>
             <div>
                 </div>
@@ -122,10 +156,9 @@ h1{
         <ul>
             <li><a href="dashboard_chair.aspx"><i class="fas fa-home"></i>Home</a></li>
 <%--            <li><a href="profile.aspx"><i class="fas fa-user"></i>Profile</a></li>--%>
-            <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
+            <li><a href="about.aspx"><i class="fas fa-address-card"></i>About</a></li>
             <li><a href="reports.aspx"><i class="fas fa-folder"></i>Reports</a></li>
-            <%-- for extra pages --%>
-      <%--      <li><a href="#"><i class="fas fa-blog"></i></a></li>
+                <%-- for extra pages --%>      <%--      <li><a href="#"><i class="fas fa-blog"></i></a></li>
             <li><a href="#"><i class="fas fa-address-book"></i></a></li>
             <li><a href="#"><i class="fas fa-map-pin"></i></a></li>--%>
         </ul> 

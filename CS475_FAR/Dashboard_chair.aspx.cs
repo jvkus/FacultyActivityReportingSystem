@@ -39,5 +39,11 @@ namespace CS475_FAR
             Response.Redirect("Reports.aspx");
 
         }
+
+        protected void logoffBtn_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Response.Redirect("loginPage.aspx");
+        }
     }
 }

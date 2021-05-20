@@ -40,10 +40,10 @@
       
 
          
-        <asp:GridView ID="deasutReportGV" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="reportDate" DataSourceID="deasutReport" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="deasutReportGV" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="deasutReport" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
+                <asp:BoundField DataField="reportDate" HeaderText="reportDate" SortExpression="reportDate" />
                 <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
                 <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
                 <asp:BoundField DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
@@ -54,6 +54,7 @@
                 <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
                 <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
                 <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
+                <asp:BoundField DataField="facultyID" HeaderText="facultyID" SortExpression="facultyID" />
             </Columns>
             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -70,10 +71,10 @@
         <br />
         <br />
         <br />
-        <asp:GridView ID="samjamReportGV" runat="server" AutoGenerateColumns="False" DataKeyNames="reportDate" DataSourceID="samjamReport" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="samjamReportGV" runat="server" AutoGenerateColumns="False" DataSourceID="samjamReport" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataKeyNames ="reportDate">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
+                <asp:BoundField DataField="reportDate" HeaderText="reportDate" SortExpression="reportDate" />
                 <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
                 <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
                 <asp:BoundField DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
@@ -84,6 +85,7 @@
                 <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
                 <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
                 <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
+                <asp:BoundField DataField="facultyID" HeaderText="facultyID" SortExpression="facultyID" />
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -96,11 +98,15 @@
             <SortedDescendingCellStyle BackColor="#E9EBEF" />
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
-        <asp:SqlDataSource ID="samjamReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [samjamReport]"></asp:SqlDataSource>
-        <asp:GridView ID="tomjefReportGV" runat="server" AutoGenerateColumns="False" DataKeyNames="reportDate" DataSourceID="tomjefReport" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <asp:SqlDataSource ID="samjamReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [samjamReport] WHERE ([facultyID] = @facultyID)">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="samjamReportGV" DefaultValue="f00009" Name="facultyID" PropertyName="SelectedValue" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:GridView ID="tomjefReportGV" runat="server" AutoGenerateColumns="False" DataSourceID="tomjefReport" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
+                <asp:BoundField DataField="reportDate" HeaderText="reportDate" SortExpression="reportDate" />
                 <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
                 <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
                 <asp:BoundField DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
@@ -111,6 +117,7 @@
                 <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
                 <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
                 <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
+                <asp:BoundField DataField="facultyID" HeaderText="facultyID" SortExpression="facultyID" />
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -124,10 +131,10 @@
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
         <asp:SqlDataSource ID="tomjefReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [tomjefReport]"></asp:SqlDataSource>
-        <asp:GridView ID="camjefReportGV" runat="server" AutoGenerateColumns="False" DataKeyNames="reportDate" DataSourceID="camjefReport" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="camjefReportGV" runat="server" AutoGenerateColumns="False" DataSourceID="camjefReport" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
+                <asp:BoundField DataField="reportDate" HeaderText="reportDate" SortExpression="reportDate" />
                 <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
                 <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
                 <asp:BoundField DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
@@ -138,6 +145,7 @@
                 <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
                 <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
                 <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
+                <asp:BoundField DataField="facultyID" HeaderText="facultyID" SortExpression="facultyID" />
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -151,9 +159,9 @@
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
         <asp:SqlDataSource ID="camjefReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [camjefReport]"></asp:SqlDataSource>
-        <asp:GridView ID="johsmiReportGV" runat="server" AutoGenerateColumns="False" DataKeyNames="reportDate" DataSourceID="johsmiReport" Visible="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+        <asp:GridView ID="johsmiReportGV" runat="server" AutoGenerateColumns="False" DataSourceID="johsmiReport" Visible="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4">
             <Columns>
-                <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
+                <asp:BoundField DataField="reportDate" HeaderText="reportDate" SortExpression="reportDate" />
                 <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
                 <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
                 <asp:BoundField DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
@@ -164,6 +172,7 @@
                 <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
                 <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
                 <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
+                <asp:BoundField DataField="facultyID" HeaderText="facultyID" SortExpression="facultyID" />
             </Columns>
             <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
             <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
@@ -178,9 +187,9 @@
         <asp:SqlDataSource ID="johsmiReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [johsmiReport]"></asp:SqlDataSource>
         <br />
         <br />
-        &nbsp;<asp:GridView ID="melsmiReportGV" runat="server" AutoGenerateColumns="False" DataKeyNames="reportDate" DataSourceID="melsmiReport" Visible="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+        &nbsp;<asp:GridView ID="melsmiReportGV" runat="server" AutoGenerateColumns="False" DataSourceID="melsmiReport" Visible="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4">
             <Columns>
-                <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
+                <asp:BoundField DataField="reportDate" HeaderText="reportDate" SortExpression="reportDate" />
                 <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
                 <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
                 <asp:BoundField DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
@@ -191,6 +200,7 @@
                 <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
                 <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
                 <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
+                <asp:BoundField DataField="facultyID" HeaderText="facultyID" SortExpression="facultyID" />
             </Columns>
             <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
             <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
@@ -204,9 +214,9 @@
         </asp:GridView>
         <asp:SqlDataSource ID="melsmiReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [melsmiReport]"></asp:SqlDataSource>
         <br />
-        <asp:GridView ID="camwalReportGV" runat="server" AutoGenerateColumns="False" DataKeyNames="reportDate" DataSourceID="camwalReport" Visible="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
+        <asp:GridView ID="camwalReportGV" runat="server" AutoGenerateColumns="False" DataSourceID="camwalReport" Visible="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
             <Columns>
-                <asp:BoundField DataField="reportDate" HeaderText="reportDate" ReadOnly="True" SortExpression="reportDate" />
+                <asp:BoundField DataField="reportDate" HeaderText="reportDate" SortExpression="reportDate" />
                 <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
                 <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
                 <asp:BoundField DataField="departmentName" HeaderText="departmentName" SortExpression="departmentName" />
@@ -217,6 +227,7 @@
                 <asp:BoundField DataField="scholarlyA" HeaderText="scholarlyA" SortExpression="scholarlyA" />
                 <asp:BoundField DataField="scholarlyB" HeaderText="scholarlyB" SortExpression="scholarlyB" />
                 <asp:BoundField DataField="narrative" HeaderText="narrative" SortExpression="narrative" />
+                <asp:BoundField DataField="facultyID" HeaderText="facultyID" SortExpression="facultyID" />
             </Columns>
             <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
             <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
@@ -228,7 +239,7 @@
             <SortedDescendingCellStyle BackColor="#F1E5CE" />
             <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>
-        <asp:SqlDataSource ID="camwalReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [camwalReport]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="camwalReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT DISTINCT * FROM [camwalReport]"></asp:SqlDataSource>
         <br />
         <br />
         <br />
@@ -258,7 +269,7 @@
             <SortedDescendingCellStyle BackColor="#D8D8F0" />
             <SortedDescendingHeaderStyle BackColor="#3E3277" />
         </asp:GridView>
-        <asp:SqlDataSource ID="hensmiReportGV" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [Reports]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="hensmiReportGV" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT DISTINCT * FROM [Reports] ORDER BY [facultyID]"></asp:SqlDataSource>
         <br />
         <asp:Button ID="btnDownloadSamjam" runat="server" OnClick="btnDownloadSamjam_Click" Text="Download" Height="41px" Width="112px" />
         <br />

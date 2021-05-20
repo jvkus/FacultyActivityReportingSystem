@@ -139,7 +139,7 @@ h1{
 
          .auto-style7 {
              height: 74px;
-             margin-left:443px;
+             margin-left:125px;
              margin-bottom:0px;
              width: 457px;
          }
@@ -176,7 +176,7 @@ h1{
                         <td class="auto-style5">
                 <img alt="" src="Elmhurst_University_logo.png" height="100" class="auto-style8" /></td>
                         <td class="auto-style9">
-                            <h1 class="auto-style7">Welcome, 
+                            <h1 class="auto-style7">Welcome back, 
                 <asp:Label ID="Label1" runat="server"></asp:Label>
                <br />
                             <asp:Button ID="logoffBtn" runat="server" CssClass="btn btn-dark"
@@ -202,8 +202,10 @@ h1{
         <h2>FARS</h2>
         <ul>
             <li><a href="dashboard_faculty.aspx"><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="profile.aspx"><i class="fas fa-user"></i>Profile</a></li>
+            <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="about.aspx"><i class="fas fa-address-card"></i>About</a></li>
+                        <li><a href="reports.aspx"><i class="fas fa-folder"></i>Reports</a></li>
+
                 <%--  <li><a href="Reports.aspx"><i class="fas fa-folder"></i>Reports</a></li>--%>            <%-- for extra pages --%>      <%--      <li><a href="#"><i class="fas fa-blog"></i></a></li>
             <li><a href="#"><i class="fas fa-address-book"></i></a></li>
             <li><a href="#"><i class="fas fa-map-pin"></i></a></li>--%>

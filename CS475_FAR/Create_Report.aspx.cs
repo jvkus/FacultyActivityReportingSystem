@@ -125,7 +125,7 @@ ConfigurationManager.ConnectionStrings["far_testingConnectionString3"].ToString(
 
 
                 }
-                if (Session["samjam"] != null)
+                if (Session["user"].ToString() == "samjam" && Session["user"] != null) 
                 {
 
                     string querySam = "insert into samjamReport(facultyID, reportDate, firstName, lastName, departmentName, teachingA, teachingB, serviceA, serviceB, scholarlyA, scholarlyB, narrative) values('" + txtFacultyID.Text + "','" + txtReportDate.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtDeptName.Text + "','" + txtTeaching.Text + "','" + txtReflect.Text + "','" + txtService.Text + "','" + txtServiceReflect.Text + "','" + txtScholarly.Text + "','" + txtScholarlyReflect.Text + "','" + txtNarrative.Text + "')";

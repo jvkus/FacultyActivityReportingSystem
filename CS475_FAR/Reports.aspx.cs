@@ -31,7 +31,7 @@ namespace CS475_FAR
             {
                
                
-         if(Session["hensmi"] != null)
+         if(Session["user"].ToString() == "hensmi")
                 {    deanReportGV.Visible = true;
                     btnDownloadHensmi.Visible = true;
                     btnDownloadCamjef.Visible = false;
@@ -56,7 +56,7 @@ namespace CS475_FAR
                         
                 }
 
-                if(Session["melsmi"] != null)
+                if (Session["user"].ToString() == "melsmi")
                 {
 
                     melsmiReportGV.Visible = true;
@@ -70,7 +70,7 @@ namespace CS475_FAR
                     tomjefReportGV.Visible = false;
                 }
 
-                if (Session["camwal"] != null)
+                if (Session["user"].ToString() == "camwal")
                 {
                    
                     camwalReportGV.Visible = true;
@@ -84,7 +84,7 @@ namespace CS475_FAR
                     tomjefReportGV.Visible = false;
 
                 }
-                if (Session["samjam"] != null)
+                if (Session["user"].ToString() == "samjam")
                 { samjamReportGV.Visible = true;
                 
                     deanReportGV.Visible = false;
@@ -95,9 +95,19 @@ namespace CS475_FAR
                     melsmiReportGV.Visible = false;
                     tomjefReportGV.Visible = false;
 
+                    btnDownloadHensmi.Visible = false;
+                    btnDownloadCamjef.Visible = false;
+                    btnDownloadCamwal.Visible = false;
+                    btnDownloadDeasut.Visible = false;
+                    btnDownloadJohsmi.Visible = false;
+                    btnDownloadMelsmi.Visible = false;
+                    btnDownloadSamjam.Visible = true;
+                    btnDownloadTomjef.Visible = false;
+
+
                 }
 
-                if (Session["tomjef"] != null)
+                if (Session["user"].ToString() == "tomjef")
                 {
                     samjamReportGV.Visible = false;
 
@@ -111,7 +121,7 @@ namespace CS475_FAR
 
                 }
 
-                if (Session["deasut"] != null)
+                if (Session["user"].ToString() == "deasut")
                 {
                     samjamReportGV.Visible = false;
 
@@ -125,7 +135,7 @@ namespace CS475_FAR
 
                 }
 
-                if (Session["camjef"] != null)
+                if (Session["user"].ToString() == "camjef")
                 {
                     samjamReportGV.Visible = false;
 
@@ -198,55 +208,45 @@ namespace CS475_FAR
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
-           
-            if (Session["tomjef"] != null)
-            {
-                Response.Redirect("Dashboard_faculty.aspx");
-
-            }
-
-            else if (Session["melsmi"] != null)
+            if(Session["user"].ToString() == "melsmi")
             {
                 Response.Redirect("Dashboard_chair.aspx");
-
             }
-           else if (Session["hensmi"] != null)
+
+            if (Session["user"].ToString() == "tomjef")
+            {
+                Response.Redirect("Dashboard_faculty.aspx");
+            }
+            if (Session["user"].ToString() == "hensmi")
             {
                 Response.Redirect("Dashboard_dean.aspx");
             }
-
-          else if (Session["johsmi"] != null)
+            if (Session["user"].ToString() == "johsmi")
             {
                 Response.Redirect("Dashboard_chair.aspx");
-
             }
 
-           else if (Session["camwal"] != null)
+
+            if (Session["user"].ToString() == "camwal")
             {
                 Response.Redirect("Dashboard_chair.aspx");
-
             }
 
 
-
-           else if (Session["samjam"] != null)
+            if (Session["user"].ToString() == "samjam")
             {
                 Response.Redirect("Dashboard_faculty.aspx");
-
             }
 
 
-
-           else if (Session["deasut"] != null)
+            if (Session["user"].ToString() == "deasut")
             {
                 Response.Redirect("Dashboard_faculty.aspx");
-
             }
 
-           else if (Session["camjef"] != null)
+            if (Session["user"].ToString() == "camjef")
             {
                 Response.Redirect("Dashboard_faculty.aspx");
-
             }
         }
 
