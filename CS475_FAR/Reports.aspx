@@ -269,7 +269,7 @@
             <SortedDescendingCellStyle BackColor="#F1E5CE" />
             <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>
-        <asp:SqlDataSource ID="camwalReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT DISTINCT * FROM [camwalReport]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="camwalReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [camwalReport]"></asp:SqlDataSource>
         <br />
         <br />
         <br />

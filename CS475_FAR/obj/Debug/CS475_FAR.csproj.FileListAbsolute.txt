@@ -174,13 +174,8 @@ C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bi
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\itext.svg.dll
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.AspNet.FriendlyUrls.dll
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.AspNet.Identity.Owin.dll
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Owin.dll
-C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Owin.Security.dll
-C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Owin.Security.OAuth.dll
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.ScriptManager.MSAjax.dll
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.ScriptManager.WebForms.dll
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Web.Infrastructure.dll
@@ -212,11 +207,6 @@ C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bi
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\itext.styledxmlparser.xml
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\itext.svg.xml
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Owin.xml
-C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Owin.Security.xml
-C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\System.Net.Http.Formatting.xml
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\System.Web.Helpers.xml
 C:\Users\e0652386\source\repos\jvkus\FacultyActivityReportingSystem\CS475_FAR\bin\System.Web.Http.xml
