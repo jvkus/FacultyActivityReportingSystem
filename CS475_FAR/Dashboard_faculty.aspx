@@ -160,36 +160,34 @@ h1{
          .auto-style9 {
              height: 102px;
          }
+
+         th, td {
+            padding: 2px 5px;
+         }
      </style>
     <title></title>
 
     </head>
 <body>
-
-
-
      <form id="form2" runat="server">
          <div>
-             <div>
-                <table class="auto-style3">
+             <h1>
+                <table class="auto-style3" style="margin-bottom:20px">
                     <tr>
                         <td class="auto-style5">
-                <img alt="" src="Elmhurst_University_logo.png" height="100" class="auto-style8" /></td>
+                            <img alt="" src="Elmhurst_University_logo.png" height="100" class="auto-style8" />
+                        </td>
                         <td class="auto-style9">
                             <h1 class="auto-style7">Welcome back, 
-                <asp:Label ID="Label1" runat="server"></asp:Label>
-               <br />
-                            <asp:Button ID="logoffBtn" runat="server" CssClass="btn btn-dark"
-
-                                ForeColor="white" OnClick="logoffBtn_Click" Text="Logout" Height="36px" Width="141px" />
-                </h1>
+                                <asp:Label ID="Label1" runat="server"></asp:Label>
+                                <br />
+                                <asp:Button ID="logoffBtn" runat="server" CssClass="btn btn-dark" ForeColor="white" OnClick="logoffBtn_Click" Text="Log out" Height="36px" Width="141px" />
+                            </h1>
                         </td>
                     </tr>
-                    </table>
-           
-                <br />
-           
-                </div>
+                </table>
+                Faculty Dashboard
+            </h1>
         </div>
 
 <%--        this tag is to display icons in the sidebar--%>
@@ -214,19 +212,19 @@ h1{
     </div>
     <div class="main_content">
 
-        <div class="header"><h3>Schedule<asp:SqlDataSource ID="scheduleJohn" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString %>" SelectCommand="SELECT * FROM [johnsmithSchedule]">
-  
-            
-                                        </asp:SqlDataSource>
+        <div class="header">
+            <h3>
+                Schedule
+                <asp:SqlDataSource ID="scheduleJohn" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString %>" SelectCommand="SELECT * FROM [johnsmithSchedule]"></asp:SqlDataSource>
             </h3>
             <div>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="auto-style2" DataSourceID="scheduleJohn" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None" Height="231px" Width="594px">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField DataField="courseID" HeaderText="courseID" SortExpression="courseID" ItemStyle-Width="100" />
-                        <asp:BoundField DataField="courseName" HeaderText="courseName" SortExpression="courseName" ItemStyle-Width="100" />
-                        <asp:BoundField DataField="startTime" HeaderText="startTime" SortExpression="startTime" ItemStyle-Width="100" />
-                        <asp:BoundField DataField="endTime" HeaderText="endTime" SortExpression="endTime" ItemStyle-Width="100" />
+                        <asp:BoundField DataField="courseID" HeaderText="Course ID" SortExpression="courseID" ItemStyle-Width="100" />
+                        <asp:BoundField DataField="courseName" HeaderText="Course Name" SortExpression="courseName" ItemStyle-Width="100" />
+                        <asp:BoundField DataField="startTime" HeaderText="Start Time" SortExpression="startTime" ItemStyle-Width="100" />
+                        <asp:BoundField DataField="endTime" HeaderText="End Time" SortExpression="endTime" ItemStyle-Width="100" />
                         <asp:BoundField DataField="Days" HeaderText="Days" SortExpression="Days" />
                     </Columns>
                     <EditRowStyle BackColor="#2461BF" />

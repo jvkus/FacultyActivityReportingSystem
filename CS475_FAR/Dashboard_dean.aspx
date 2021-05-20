@@ -66,8 +66,6 @@ body{
 .wrapper .sidebar ul li:hover a{
   color: #fff;
 }
- 
-
 
 .wrapper .main_content{
   width: 100%;
@@ -100,6 +98,10 @@ h1{
     margin:20px;
 }
 
+th, td {
+    padding: 2px 5px;
+}
+
 }
         .auto-style1 {
             width: 100%;
@@ -115,10 +117,10 @@ h1{
             width: 766px;
         }
 
-         .auto-style7 label Label1 {
-             font-size:50px;
-         }
-        h1.auto-style7{
+        .auto-style7 label Label1 {
+            font-size:50px;
+        }
+        h1.auto-style7 {
             font-size:16px;
             margin-left:auto;
         }
@@ -126,27 +128,26 @@ h1{
     <form id="form1" runat="server">
         <div>
             <h1>
-                <table class="auto-style1">
+                <table class="auto-style1" style="margin-bottom:20px">
                     <tr>
                         <td class="auto-style3">
                             <asp:Image ID="Image1" runat="server" ImageUrl="~/Elmhurst_University_logo.png" Height="100" />
                         </td>
                         <td class="auto-style2">
                             <h1 class="auto-style7">Welcome back, 
-                <asp:Label ID="Label1" runat="server"></asp:Label>
-               <br />
-                            <asp:Button ID="logoffBtn" runat="server" CssClass="btn btn-dark"
-
-                                ForeColor="white" OnClick="logoffBtn_Click" Text="Logout" Height="36px" Width="141px" />
-                </h1>
+                                <asp:Label ID="Label1" runat="server"></asp:Label>
+                                <br />
+                                <asp:Button ID="logoffBtn" runat="server" CssClass="btn btn-dark" ForeColor="white" OnClick="logoffBtn_Click" Text="Log out" Height="36px" Width="141px" />
+                            </h1>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="auto-style4">&nbsp;</td>
+                    <%--<tr>
+                        <td class="breaker">&nbsp;</td>
                         <td>&nbsp;</td>
-                    </tr>
+                    </tr> --%>
                 </table>
-                Dean Dashboard </h1>
+                Dean Dashboard
+            </h1>
         </div>
 
 <%--        this tag is to display icons in the sidebar--%>
@@ -174,11 +175,11 @@ h1{
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="facultyID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
-                    <asp:BoundField DataField="deanID" HeaderText="deanID" SortExpression="deanID" />
-                    <asp:BoundField DataField="chairID" HeaderText="chairID" SortExpression="chairID" />
-                    <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
-                    <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
-                    <asp:BoundField DataField="facultyID" HeaderText="facultyID" ReadOnly="True" SortExpression="facultyID" />
+                    <asp:BoundField DataField="deanID" HeaderText="Dean ID" SortExpression="deanID" />
+                    <asp:BoundField DataField="chairID" HeaderText="Chair ID" SortExpression="chairID" />
+                    <asp:BoundField DataField="lastName" HeaderText="Last Name" SortExpression="lastName" />
+                    <asp:BoundField DataField="firstName" HeaderText="First Name" SortExpression="firstName" />
+                    <asp:BoundField DataField="facultyID" HeaderText="Faculty ID" ReadOnly="True" SortExpression="facultyID" />
                 </Columns>
                 <EditRowStyle BackColor="#999999" />
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

@@ -107,42 +107,43 @@ h1{
             width: 837px;
         }
 
+        .auto-style7 label Label1 {
+            font-size:50px;
+        }
 
-
-          .auto-style7 label Label1 {
-             font-size:50px;
-         }
         h1.auto-style7{
             font-size:16px;
             margin-left:auto;
+        }
+
+        th, td {
+            padding: 2px 5px;
         }
     </style>
     <form id="form1" runat="server">
         <div>
             <h1>
-                <table class="auto-style1">
-                    <tr>
-                        <td class="auto-style2">&nbsp;</td>
-                        <td>
-                            <h1 class="auto-style7">Welcome back Chair, 
-                <asp:Label ID="Label1" runat="server"></asp:Label>
-               <br />
-                            <asp:Button ID="logoffBtn" runat="server" CssClass="btn btn-dark"
-
-                                ForeColor="white" OnClick="logoffBtn_Click" Text="Logout" Height="36px" Width="141px" />
-                </h1>
-                        </td>
-                    </tr>
+                <table class="auto-style1" style="margin-bottom:20px">
                     <tr>
                         <td class="auto-style2">
-                <img alt="" src="Elmhurst_University_logo.png" height = "100"/></td>
-                        <td>&nbsp;</td>
+                            <img alt="" src="Elmhurst_University_logo.png" height = "100"/>
+                        </td>
+                        <td>
+                            <h1 class="auto-style7">Welcome back,  
+                                <asp:Label ID="Label1" runat="server"></asp:Label>
+                                <br />
+                                <asp:Button ID="logoffBtn" runat="server" CssClass="btn btn-dark" ForeColor="white" OnClick="logoffBtn_Click" Text="Log out" Height="36px" Width="141px" />
+                            </h1>
+                        </td>
                     </tr>
+                    <%--<tr>
+                        <td class="auto-style2">
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>--%>
                 </table>
+                Department Chair Dashboard
             </h1>
-            <div>
-                </div>
-            <hr />
         </div>
 
 <%--        this tag is to display icons in the sidebar--%>
@@ -169,11 +170,11 @@ h1{
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="facultyID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:BoundField DataField="facultyID" HeaderText="facultyID" ReadOnly="True" SortExpression="facultyID" />
-                    <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
-                    <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
-                    <asp:BoundField DataField="deptName" HeaderText="deptName" SortExpression="deptName" />
-                    <asp:BoundField DataField="chairID" HeaderText="chairID" SortExpression="chairID" />
+                    <asp:BoundField DataField="facultyID" HeaderText="Faculty ID" ReadOnly="True" SortExpression="facultyID" />
+                    <asp:BoundField DataField="firstName" HeaderText="First Name" SortExpression="firstName" />
+                    <asp:BoundField DataField="lastName" HeaderText="Last Name" SortExpression="lastName" />
+                    <asp:BoundField DataField="deptName" HeaderText="Department " SortExpression="deptName" />
+                    <asp:BoundField DataField="chairID" HeaderText="Chair ID" SortExpression="chairID" />
                 </Columns>
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

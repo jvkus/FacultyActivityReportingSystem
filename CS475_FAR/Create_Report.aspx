@@ -7,10 +7,7 @@
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <title></title>
     <style <%--type="text/css--%>>
-
-
-
-
+        @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
         .auto-style1 {
             width: 100%;
         }
@@ -109,7 +106,18 @@ body{
   height: 100%;
   background: #555555;
   padding: 30px 0px;
-  position: fixed;
+  display: flex;
+}
+
+.sidebar {
+    height: 100vh;
+    position: absolute;
+    float: left;
+}
+
+.sidecontent {
+    width: 200px;
+    position: fixed;
 }
 
 .wrapper .sidebar h2{
@@ -146,7 +154,7 @@ body{
 
 .wrapper .main_content{
   width: 100%;
-  margin-left: 200px;
+  margin-left: 20px;
 }
 
 .wrapper .main_content .header{
@@ -166,15 +174,12 @@ body{
   border-bottom: 1px solid #e0e4e8;*/
 }
 .wrapper .main_content {
-    margin-left:300px;
+    margin-left:240px;
 }
 .wrapper .main_content .info div{
   margin-bottom: 20px;
 }
 
-h1{
-    margin:20px;
-}
 .wrapper .main_content .header p{
     margin-bottom:20px;
     margin-left:23px
@@ -182,18 +187,12 @@ h1{
 }
 .wrapper .main_content h3{
    margin:20px;
-    
+ 
 }
 .wrapper .main_content .header {
     margin:30px 0 0;
-    
-    
 }
 
-.wrapper .main_content .header h3 .contact {
-    
-    
-}
 
          .auto-style1 {
              margin-top: 18px;
@@ -202,22 +201,11 @@ h1{
       
 
 .btnSubmit {
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
 	border-radius:6px;
-	
 	display:inline-block;
 	cursor:pointer;
-	font-family:Arial;
-	font-size:15px;
 	font-weight:bold;
-	padding:6px 24px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
-}
-.btnSubmit:hover {
-	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-	background-color:#f6f6f6;
 }
 .btnSubmit:active {
 	position:relative;
@@ -247,53 +235,55 @@ h1{
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
         }
 
-     
-     
+       .mainbutton {
+            color: white;
+            border: 0;
+            font-size: 20px;
+            padding: 5px 15px;
+            background-color: #504c9f;
+            text-shadow: 0px 0px 6px #b5d3ff;
+            border-radius: 3px;
+            margin-bottom: 30px;
+            margin-right: 15px;
+        }
 
+        .mainbutton:hover {
+            background-color: #302c7f;
+            text-shadow: 0 0 8px #bffffc;
+        } 
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="imgHeader"> 
+        <div class="imgHeader" style="margin:20px"> 
             <asp:Image ID="Image1" runat="server" ImageUrl="~/Elmhurst_University_logo.png" Height ="100" />
             <br />
-      <h1 class="auto-style34">Create A New Report</h1></div>
+      <h1 class="auto-style34" style="margin-top:20px">Create A New Report</h1></div>
               <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
        
 <div class="wrapper">
     <div class="sidebar">
-
-       
-
         <%-- change some of the icons --%>
+        <div class="sidecontent">
         <h2>FARS</h2>
         <ul>
-            <li><a href="dashboard_faculty.aspx"><i class="fas fa-home"></i>Home</a></li>
+            <li>
+                <a href="dashboard_faculty.aspx">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+            </li>
            <%-- <li><a href="profile.aspx"><i class="fas fa-user"></i>Profile</a></li>--%>
             <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
             <li><a href="reports.aspx"><i class="fas fa-folder"></i>Reports</a></li>
-              </ul> 
+              </ul>
+        </div>
         
     </div> 
     <div class="main_content"> 
     <div>
    
             <table class="auto-style1">
-                <tr>
-                    <td class="auto-style8">
-                        &nbsp;</td>
-                    <td class="auto-style10">
-                        <br />
-                        <br />
-                        <br />
-                    </td>
-                    <td class="auto-style17">
-                        &nbsp;</td>
-                    <td class="auto-style30">
-                        &nbsp;</td>
-                    <td class="auto-style9">
-                        &nbsp;</td>
-                </tr>
                 <tr>
                     <td class="auto-style8">
                         <asp:Label ID="lblFirstName" runat="server" Text="First Name:"></asp:Label>
@@ -510,35 +500,20 @@ h1{
                 </td>
             </tr>
             <tr>
-                <td class="auto-style26">
-                        &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style26">&nbsp;</td>
                 <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style26">
-                    &nbsp;</td>
-                
-                <td>
-                    
-                        &nbsp;</td>
             </tr>
             <tr>
                 <td><div class="btnSubmit">
                     
-                        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" Height="27px" Width="66px" CssClass ="btn-btn primary"/></div>
-                    <asp:Button ID="btnClear" runat="server" Height="27px" Text="Clear" Width="66px" OnClick="btnClear_Click" />
+                    <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" CssClass ="mainbutton"/></div>
+                    <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" CssClass="mainbutton" />
+                    &nbsp;
+                    &nbsp;
                 </td>
             </tr>
             
         </table></div>
     </div>
-        <p>
-            &nbsp;</p>
     </form>
 </body>
 </html>
