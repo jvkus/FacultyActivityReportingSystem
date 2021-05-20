@@ -18,6 +18,7 @@
         }
         .auto-style1 {
             width: 100%;
+            height: 156px;
         }
         </style>
 
@@ -32,7 +33,24 @@
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td>
+        <asp:Button ID="btnDownloadSamjam" runat="server" OnClick="btnDownloadSamjam_Click" Text="Download" Height="41px" Width="112px" />
+                    <br />
+        <asp:Button ID="btnDownloadDeasut" runat="server" OnClick="btnDownloadDeasut_Click" Text="Download" Height="41px" Width="112px" />
+                    <br />
+        <asp:Button ID="btnDownloadCamjef" runat="server" OnClick="btnDownloadCamjef_Click" Text="Download" Height="41px" Width="112px" />
+                    <br />
+        <asp:Button ID="btnDownloadTomjef" runat="server" OnClick="btnDownloadTomjef_Click" Text="Download" Height="41px" Width="112px" />
+                    <br />
+        <asp:Button ID="btnDownloadJohsmi" runat="server" OnClick="btnDownloadJohsmi_Click" Text="Download" Height="41px" Width="112px" />
+                    <br />
+        <asp:Button ID="btnDownloadMelsmi" runat="server" OnClick="btnDownloadMelsmi_Click" Text="Download" Height="41px" Width="112px" />
+                    <br />
+        <asp:Button ID="btnDownloadCamwal" runat="server" OnClick="btnDownloadCamwal_Click" Text="Download" Height="41px" Width="112px" />
+                    <br />
+        <asp:Button ID="btnDownloadHensmi" runat="server" OnClick="btnDownloadHensmi_Click" Text="Download" Height="41px" Width="112px" />
+                    <br />
+                </td>
             </tr>
         </table>
         </div>
@@ -271,28 +289,12 @@
         </asp:GridView>
         <asp:SqlDataSource ID="hensmiReportGV" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT DISTINCT * FROM [Reports] ORDER BY [facultyID]"></asp:SqlDataSource>
         <br />
-        <asp:Button ID="btnDownloadSamjam" runat="server" OnClick="btnDownloadSamjam_Click" Text="Download" Height="41px" Width="112px" />
         <br />
         <br />
-        <asp:Button ID="btnDownloadDeasut" runat="server" OnClick="btnDownloadDeasut_Click" Text="Download" Height="41px" Width="112px" />
         <br />
         <br />
-        <asp:Button ID="btnDownloadTomjef" runat="server" OnClick="btnDownloadTomjef_Click" Text="Download" Height="41px" Width="112px" />
         <br />
         <br />
-        <asp:Button ID="btnDownloadCamjef" runat="server" OnClick="btnDownloadCamjef_Click" Text="Download" Height="41px" Width="112px" />
-        <br />
-        <br />
-        <asp:Button ID="btnDownloadHensmi" runat="server" OnClick="btnDownloadHensmi_Click" Text="Download" Height="41px" Width="112px" />
-        <br />
-        <br />
-        <asp:Button ID="btnDownloadJohsmi" runat="server" OnClick="btnDownloadJohsmi_Click" Text="Download" Height="41px" Width="112px" />
-        <br />
-        <br />
-        <asp:Button ID="btnDownloadMelsmi" runat="server" OnClick="btnDownloadMelsmi_Click" Text="Download" Height="41px" Width="112px" />
-        <br />
-        <br />
-        <asp:Button ID="btnDownloadCamwal" runat="server" OnClick="btnDownloadCamwal_Click" Text="Download" Height="41px" Width="112px" />
         <br />
         <br />
         <br />
