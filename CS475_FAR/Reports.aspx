@@ -11,7 +11,10 @@
 <body style ="background-color:lightgrey;">
     <style>
 
+        .main-content{
 
+            
+        }
 
         h1{
             text-align:center;
@@ -55,6 +58,11 @@
         </table>
         </div>
         <h1>Reports</h1>
+      
+
+         
+        <div class ="main-content">
+        
       
 
          
@@ -121,7 +129,7 @@
                 <asp:ControlParameter ControlID="samjamReportGV" DefaultValue="f00009" Name="facultyID" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:GridView ID="tomjefReportGV" runat="server" AutoGenerateColumns="False" DataSourceID="tomjefReport" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="tomjefReportGV" runat="server" AutoGenerateColumns="False" DataSourceID="tomjefReport" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataKeyNames="reportDate">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="reportDate" HeaderText="reportDate" SortExpression="reportDate" />
@@ -148,7 +156,11 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-        <asp:SqlDataSource ID="tomjefReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT * FROM [tomjefReport]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="tomjefReport" runat="server" ConnectionString="<%$ ConnectionStrings:far_testingConnectionString3 %>" SelectCommand="SELECT DISTINCT * FROM [tomjefReport] WHERE ([facultyID] = @facultyID)">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="tomjefReportGV" DefaultValue="f00010" Name="facultyID" PropertyName="SelectedValue" Type="String" />
+            </SelectParameters>
+            </asp:SqlDataSource>
         <asp:GridView ID="camjefReportGV" runat="server" AutoGenerateColumns="False" DataSourceID="camjefReport" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
@@ -300,6 +312,7 @@
         <br />
         <br />
         <br />
+            </div>
     </form>
 </body>
 </html>
